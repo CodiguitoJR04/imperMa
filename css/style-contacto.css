@@ -1,0 +1,60 @@
+/* */
+form{
+    /* margin-top: 40px; */
+    height: 60vh !important;
+    width: 80% !important;
+    margin: auto !important;
+}
+
+h3{
+    color: #b8736D !important;
+    text-align:center !important;
+    font-weight: 400 !important;
+    font-size: 1.756rem !important;
+    padding: 20px !important;
+}
+.form-control{
+    background-color: rgb(1, 50, 55 , 0.8) !important; 
+    color: #fff !important;
+}
+.form-control::placeholder{
+    color: #fff !important;
+}
+
+.container-map{
+    height: 40vh !important;
+    width: 90% !important;
+}
+
+.maps{
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 20px !important;
+}
+
+.container-icon-contact{
+    width: 90% !important;
+    height: 40vh !important;
+}
+
+.icon-item{ 
+    margin: 0px !important;
+    display: flex !important;
+    position: relative !important;
+}
+
+.icon-item i{
+    margin: 10px auto !important;
+    padding: 0px !important;
+    text-align: center !important;
+    font-size: 30px !important;
+    position: absolute !important;
+    left: 11.56% !important;
+}
+
+.icon-item p{
+    margin: 10px auto !important;
+    padding: 0px !important;
+    width: 100% !important;
+    text-align: center !important;
+}

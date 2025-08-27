@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles-nosotros.css">
+    <link rel="stylesheet" href="../css/style-contacto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/v4-shims.min.css">
+    <link rel="icon" type="image/x-icon" href="/assets/img/img-usses/logos-removebg-preview.png">
+    <title>Contacto - ImperMax</title>
+</head>
+<body>
+    <header>
+        <div class="container container-custom">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top nav-custom">
+            <div class="col-4 d-flex align-items-center">
+              <a class="logo" href="/"><img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo haske" width="100" height="100"></a>
+            </div>
+            <div class="col-8">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse container-fluid" id="navbarNav">
+                <ul class="navbar-nav nav-list">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/html/nosotros.html">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/html/service.html">Servicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active " href="/html/contact.html">Contacto</a>
+                  </li>
+              </div>
+            </div>
+          </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+          <div class="container-fluid">
+            <div class="container text-center content-title-logo">
+              <div class="d-flex justify-content-center align-items-center">
+                <div class="col-6 container-form">
+                  <h3>¿<strong>Goteras</strong> o <strong>humedades</strong>? ¡Contáctenos! Expertos en <strong>impermeabilización</strong> y <strong>trabajos verticales</strong>. 
+    <strong>Diagnóstico gratuito</strong> y <strong>presupuesto sin compromiso</strong>. 
+    Garantía escrita en todos nuestros servicios.</h3>
+                  <!-- Hacemos el formulario de contacto , con nombre , email, superficie con selccion(10mt , 50mt, 100mt, mas de 100mt), asunto . Sin label y solo placeholder con el fondo del inpuet verde -->
+                  <form>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="name" placeholder="Nombre" required style="background-color: rgb(1, 50, 55 , 0.8); color: #fff;">
+                    </div>
+                    <div class="mb-3">
+                      <input type="email" class="form-control" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="mb-3">
+                      <select class="form-select" id="surface" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="10">10 mt</option>
+                        <option value="50">50 mts</option>
+                        <option value="100">100 mts</option>
+                        <option value="more">Más de 100 mts</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <input type="text" class="form-control" id="subject" placeholder="Asunto" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Enviar</button>
+                  </form>
+                </div>
+                <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+                  <div class="container-map">
+                    <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2447.6143672322123!2d-98.98396372686643!3d19.41102046584576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e31183a98117%3A0x67af83307b688030!2sFrancisco%20Javier%20Mina%2C%20Xaltipac%2C%2056346%20Chimalhuac%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1755990010177!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <div class="container-icon-contact" style="color: #b27571;" >
+                    <div class="icon-item col-12">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <p>Ubicación: Chimalhuacán, México</p>
+                    </div>
+                    <div class="icon-item col-12">
+                      <i class="fas fa-envelope"></i>
+                      <p>Email: contacto@impermax.com</p>
+                    </div>
+                    <div class="icon-item col-12">
+                      <i class="fas fa-phone"></i>
+                      <p>Teléfono: +52 55 1234 5678</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>
+    <footer>
+      <div class="container-fluid">
+      <div class="container container-custom-footer">
+      <div class="container-icon-nav-menu">
+        <div class="container-icon">
+          <img src="https://media.canva.com/v2/image-resize/format:PNG/height:500/quality:100/uri:ifs%3A%2F%2FM%2F8e60d762-5ebd-48fa-9b0b-c2018471bb52/watermark:F/width:500?csig=AAAAAAAAAAAAAAAAAAAAAOTQhLksmWUCGywqnh_FaEymhRFN6RMTxgz19jDuCAqa&exp=1756248081&osig=AAAAAAAAAAAAAAAAAAAAAGbVObm44Bx_1GOKypc9X_EQ5mp3SgtJglGLVWlO6gPu&signer=media-rpc&x-canva-quality=screen_3x" alt="">
+        </div>  
+        <div class="container-redes-sociales">
+          <!-- Iconos de redes sociales -->
+          <a class="icon-red" href="#"><i class="fab fa-facebook-f"></i><span>ImperMax</span></a>
+          <a class="icon-red" href="#"><i class="fab fa-twitter"></i><span>ImperMax</span></a>
+          <a class="icon-red" href="#"><i class="fab fa-instagram"></i><span>ImperMax</span></a>
+        </div>
+        <div class="container-menu">
+          <ul class="list-unstyled d-flex justify-content-center flex-column">
+            <li class="nav-footer"><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
+            <li class="nav-footer"><a href="/about"><i class="fas fa-users"></i> Nosotros</a></li>
+            <li class="nav-footer"><a href="/contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+            <li class="nav-footer"><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid text-center" style="height: 5vh;">
+        <p>&copy; 2023 ImperMax. Todos los derechos reservados.</p>
+      </div>
+      </div>
+      </div>
+    </footer>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+<script src="../js/index.js"></script> <!-- si tú tienes código JS personalizado -->
+
+</body>
+</html>
