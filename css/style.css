@@ -385,7 +385,7 @@ flex-direction: column;
     object-fit: contain;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .conten-slide-custom{
         left: 0%;
     }
