@@ -105,12 +105,12 @@ li > a:hover{
     }
     
 .item-custom{
-    width: 100% !important;
-    height: 100vh !important;
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    width: 100%;
+    height: 100vh;
+    /* position: relative !important; */
+    display: flex ;
+    justify-content: center ;
+    align-items: center;
     background-color: rgba(17, 11, 7,0.2);
 }
 
@@ -385,3 +385,71 @@ flex-direction: column;
     object-fit: contain;
 }
 
+@media screen and (max-width: 768px) {
+    .conten-slide-custom{
+        left: 0%;
+    }
+
+    .year-establish{
+        width: 70% ;
+    }
+    .year-establish h2{
+        font-size: 2.6rem;
+    }
+
+    .year-description{
+        width: 100%;
+        height: auto;
+    }
+    .content-year-nosotros{
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        margin-top: -150px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .conten-slide-custom{
+        left: 0%;
+    }
+
+    .content-year-nosotros{
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        margin-top: -150px;
+    }
+
+    .year-establish{
+        width: 100% ;
+        height: auto;
+        margin: 10px auto;
+    }
+    .year-establish h2{
+        font-size: 1.9rem;
+    }
+
+    .year-description h2{
+        font-size: 1.4rem;
+    }
+
+    .year-description p{
+        font-size: 0.9rem;
+    }
+
+    .year-description {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .container-servicios{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
