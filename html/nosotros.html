@@ -1,117 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles-nosotros.css">
+    <meta name="description" content="ImperMax: Expertos en impermeabilización y trabajos verticales. Conoce nuestra historia, misión y valores.">
+    <meta name="keywords" content="impermeabilización, trabajos verticales, reparación de goteras, humedades, filtraciones agua, reparación fachadas, limpieza alturas, sellado de techos">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/v4-shims.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Yaldevi:wght@200..700&family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/assets/img/img-usses/logos-removebg-preview.png">
     <title>Nosotros - ImperMax</title>
+    <style>
+        :root {
+            --color-primario: #20304C;
+            --color-secundario: #3A5074;
+            --color-acento: #b8736D;
+            --color-claro: #f8f9fa;
+            --color-oscuro: #212529;
+            --fuente-principal: 'Yeseva One', serif;
+            --fuente-secundaria: 'Yaldevi', sans-serif;
+        }
+        
+        body {
+            font-family: var(--fuente-secundaria);
+            color: var(--color-oscuro);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: var(--fuente-principal);
+        }
+        
+        /* Navegación */
+        .nav-custom {
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: white !important;
+            position: relative;
+            width: 100%;
+            z-index: 1020;
+        }
+        
+        .nav-list .nav-link {
+            color: var(--color-primario) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .nav-list .nav-link:hover, 
+        .nav-list .nav-link.active {
+            color: var(--color-secundario) !important;
+            border-bottom: 2px solid var(--color-secundario);
+            background-color: transparent !important;
+        }
+        
+        /* Contenido principal */
+        .content-title-logo {
+            padding: 80px 0;
+            background-color: var(--color-claro);
+        }
+        
+        .container-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .content-title-logo h2 {
+            color: var(--color-primario);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .content-title-logo p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .content-title-logo h3 {
+            font-style: italic;
+            color: var(--color-acento);
+            margin: 30px 0;
+            font-size: 1.5rem;
+        }
+        
+        .chat-icon {
+            font-size: 3rem;
+            color: var(--color-primario);
+            margin: 30px 0;
+        }
+        
+        .btn-custom {
+            background-color: var(--color-primario);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-custom:hover {
+            background-color: var(--color-secundario);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--color-oscuro);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .container-icon img {
+            max-height: 120px;
+            margin-bottom: 20px;
+        }
+        
+        .icon-red {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            margin: 10px 0;
+        }
+        
+        .icon-red:hover {
+            color: var(--color-acento);
+            transform: translateX(5px);
+        }
+        
+        .icon-red i {
+            margin-right: 10px;
+        }
+        
+        .nav-footer a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: block;
+            margin: 5px 0;
+        }
+        
+        .nav-footer a:hover {
+            color: var(--color-acento);
+            padding-left: 5px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .content-title-logo h2 {
+                font-size: 2rem;
+            }
+            
+            .content-title-logo h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-custom {
+                border-radius: 0;
+            }
+            
+            .content-title-logo {
+                padding: 60px 0;
+            }
+            
+            .content-title-logo h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content-title-logo h3 {
+                font-size: 1.2rem;
+            }
+            
+            .btn-custom {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .container-icon-nav-menu {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .container-icon, 
+            .container-redes-sociales, 
+            .container-menu {
+                margin-bottom: 30px;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .content-title-logo {
+                padding: 40px 0;
+            }
+            
+            .content-title-logo h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content-title-logo p {
+                font-size: 1rem;
+            }
+            
+            .chat-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container container-custom">
           <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top nav-custom">
-            <div class="col-4 d-flex align-items-center">
-              <a class="logo" href="/"><img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo haske" width="100" height="100"></a>
-            </div>
-            <div class="col-8">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">
+                <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo ImperMax" width="80" height="80">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse container-fluid" id="navbarNav">
-                <ul class="navbar-nav nav-list">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto nav-list">
                   <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/">Inicio</a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="/html/nosotros.html">Nosotros</a>
+                    <a class="nav-link" href="/">Inicio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/html/service.html">Servicio</a>
+                    <a class="nav-link active" href="/html/nosotros.html">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/html/service.html">Servicios</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/html/contact.html">Contacto</a>
                   </li>
+                </ul>
               </div>
             </div>
           </nav>
         </div>
     </header>
+    
     <main>
         <section>
-          <div class="container-fluid">
-            <div class="container text-center content-title-logo">
-              <div class="row ">
-              <div class="col-6 container-logo d-flex align-items-center justify-content-center">
-                <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="">
-              </div>
-              <div class="col-6 d-flex flex-column align-items-center justify-content-center">
-                <h2>
-                  ¿Quiénes somos?
-                </h2>
-                <p><strong>IMPER MAX</strong>: Expertos en <strong>impermeabilización profesional</strong>. Ofrecemos servicios especializados en <strong>solución de humedades</strong>, aplicamos <strong>membranas líquidas y asfálticas</strong> de <strong>alta calidad</strong> para proteger tu propiedad. <strong>Garantía</strong> en todos nuestros trabajos.</p>
-                <h3><strong>"ImperMax: Donde el agua no ingresa, la calidad sí permanece"</strong></h3>
-                <div class="chat-icon">
-            <i class="fas fa-comments"></i>
-          </div>
-              </div>
-              <!-- Botón de enlace a la pagina de contacto -->
-              <div class="col-12 text-center">
-                <a href="/html/contact.html" class="btn btn-custom">Contáctanos</a>
-              </div>
-              
+          <div class="container-fluid content-title-logo">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-12 col-md-6 container-logo d-flex align-items-center justify-content-center mb-4 mb-md-0">
+                  <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo ImperMax" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center text-center text-md-start">
+                  <h2>¿Quiénes somos?</h2>
+                  <p><strong>IMPER MAX</strong>: Expertos en <strong>impermeabilización profesional</strong>. Ofrecemos servicios especializados en <strong>solución de humedades</strong>, aplicamos <strong>membranas líquidas y asfálticas</strong> de <strong>alta calidad</strong> para proteger tu propiedad. <strong>Garantía</strong> en todos nuestros trabajos.</p>
+                  <h3><strong>"ImperMax: Donde el agua no ingresa, la calidad sí permanece"</strong></h3>
+                  <div class="chat-icon">
+                    <i class="fas fa-comments"></i>
+                  </div>
+                </div>
+                <!-- Botón de enlace a la pagina de contacto -->
+                <div class="col-12 text-center mt-4">
+                  <a href="/html/contact.html" class="btn btn-custom">Contáctanos</a>
+                </div>
               </div>
             </div>
           </div>
         </section>
     </main>
+    
     <footer>
-      <div class="container-fluid">
-      <div class="container container-custom-footer">
-      <div class="container-icon-nav-menu">
-        <div class="container-icon">
-          <img src="https://media.canva.com/v2/image-resize/format:PNG/height:500/quality:100/uri:ifs%3A%2F%2FM%2F8e60d762-5ebd-48fa-9b0b-c2018471bb52/watermark:F/width:500?csig=AAAAAAAAAAAAAAAAAAAAAOTQhLksmWUCGywqnh_FaEymhRFN6RMTxgz19jDuCAqa&exp=1756248081&osig=AAAAAAAAAAAAAAAAAAAAAGbVObm44Bx_1GOKypc9X_EQ5mp3SgtJglGLVWlO6gPu&signer=media-rpc&x-canva-quality=screen_3x" alt="">
+      <div class="container">
+        <div class="row container-icon-nav-menu">
+          <div class="col-12 col-md-4 container-icon text-center mb-4 mb-md-0">
+            <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo ImperMax" class="img-fluid">
+          </div>
+          <div class="col-12 col-md-4 container-redes-sociales text-center mb-4 mb-md-0">
+            <a class="icon-red" href="#"><i class="fab fa-facebook-f"></i><span> ImperMax</span></a>
+            <a class="icon-red" href="#"><i class="fab fa-twitter"></i><span> ImperMax</span></a>
+            <a class="icon-red" href="#"><i class="fab fa-instagram"></i><span> ImperMax</span></a>
+          </div>
+          <div class="col-12 col-md-4 container-menu text-center">
+            <ul class="list-unstyled">
+              <li class="nav-footer"><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
+              <li class="nav-footer"><a href="/about"><i class="fas fa-users"></i> Nosotros</a></li>
+              <li class="nav-footer"><a href="/contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+              <li class="nav-footer"><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="container-redes-sociales">
-          <!-- Iconos de redes sociales -->
-          <a class="icon-red" href="#"><i class="fab fa-facebook-f"></i><span>ImperMax</span></a>
-          <a class="icon-red" href="#"><i class="fab fa-twitter"></i><span>ImperMax</span></a>
-          <a class="icon-red" href="#"><i class="fab fa-instagram"></i><span>ImperMax</span></a>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <p>&copy; 2023 ImperMax. Todos los derechos reservados.</p>
+          </div>
         </div>
-        <div class="container-menu">
-          <ul class="list-unstyled d-flex justify-content-center flex-column">
-            <li class="nav-footer"><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
-            <li class="nav-footer"><a href="/about"><i class="fas fa-users"></i> Nosotros</a></li>
-            <li class="nav-footer"><a href="/contact"><i class="fas fa-envelope"></i> Contacto</a></li>
-            <li class="nav-footer"><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="container-fluid text-center" style="height: 5vh;">
-        <p>&copy; 2023 ImperMax. Todos los derechos reservados.</p>
-      </div>
-      </div>
       </div>
     </footer>
-<script src="../js/bootstrap.bundle.min.js"></script>
-<script src="../js/index.js"></script> <!-- si tú tienes código JS personalizado -->
-<script src="../js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

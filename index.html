@@ -5,187 +5,554 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ImperMax: Expertos en impermeabilización y trabajos verticales. Soluciones profesionales con más de 20 años de experiencia. Garantía de calidad y precios competitivos.">
   <meta name="keywords" content="impermeabilización, trabajos verticales, reparación de goteras, humedades, filtraciones agua, reparación fachadas, limpieza alturas, sellado de techos">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/v4-shims.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Yaldevi:wght@200..700&family=Yeseva+One&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/assets/img/img-usses/logos-removebg-preview.png">
   <title>Inicio - ImperMax</title>
+  <style>
+    :root {
+      --color-primario: #20304C;
+      --color-secundario: #3A5074;
+      --color-acento: #b8736D;
+      --color-claro: #f8f9fa;
+      --color-oscuro: #212529;
+      --fuente-principal: 'Yeseva One', serif;
+      --fuente-secundaria: 'Yaldevi', sans-serif;
+    }
+    
+    body {
+      font-family: var(--fuente-secundaria);
+      color: var(--color-oscuro);
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: var(--fuente-principal);
+    }
+    
+    /* Navegación */
+    .nav-custom {
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background-color: white !important;
+      position: absolute;
+      width: 90%;
+      left: 5%;
+      top: 0;
+      z-index: 1020;
+      border-radius: 0 0 30px 30px;
+    }
+    
+    .nav-list .nav-link {
+      color: var(--color-primario) !important;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+    
+    .nav-list .nav-link:hover, 
+    .nav-list .nav-link.active {
+      color: var(--color-secundario) !important;
+      border-bottom: 2px solid var(--color-secundario);
+      background-color: transparent !important;
+    }
+    
+    /* Carrusel */
+    .carousel {
+      height: 100vh;
+    }
+    
+    .carousel-item {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .carousel-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    
+    .item-custom {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .conten-slide-custom {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 90%;
+      text-align: center;
+    }
+    
+    .title-slide-card {
+      color: var(--color-primario);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .btn-custom {
+      background-color: var(--color-primario);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-custom:hover {
+      background-color: var(--color-secundario);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .carousel-indicators {
+      margin-bottom: 20px;
+      z-index: 3;
+    }
+    
+    .btn-slide {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--color-primario);
+      border: none;
+      margin: 0 5px;
+    }
+    
+    .btn-slide.active {
+      background-color: var(--color-secundario);
+    }
+    
+    /* Sección Nosotros */
+    .section-nosotros {
+      background-color: var(--color-claro);
+      padding: 80px 0;
+    }
+    
+    .content-year-nosotros {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .year-establish {
+      text-align: center;
+      padding: 30px;
+      border-radius: 45px;
+      background-color: rgba(167, 71, 59, 0.8);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      flex: 0 0 300px;
+    }
+    
+    .year-establish h2 {
+      font-size: 3.5rem;
+      color: white;
+      margin-bottom: 10px;
+    }
+    
+    .year-establish p {
+      font-size: 1.5rem;
+      color: white;
+      margin: 0;
+    }
+    
+    .year-description {
+      background-color: white;
+      padding: 30px;
+      border-radius: 45px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      margin: 20px;
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+    }
+    
+    .container-text h2 {
+      color: #a7473b;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .container-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .content-img {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .content-img img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Sección Servicios */
+    .servicios {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .container-servicios h2 {
+      color: var(--color-primario);
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .card-custom {
+      margin: 20px 0;
+      transition: transform 0.3s;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .card-custom:hover {
+      transform: translateY(-10px);
+    }
+    
+    .container-img {
+      overflow: hidden;
+    }
+    
+    .container-img img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .card-custom:hover .container-img img {
+      transform: scale(1.05);
+    }
+    
+    .content-title {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .content-title h3 {
+      margin: 0;
+    }
+    
+    .content-title h3 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .content-title h3 a:hover {
+      color: var(--color-acento);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--color-oscuro);
+      color: white;
+      padding: 50px 0;
+    }
+    
+    .container-icon img {
+      max-height: 120px;
+      margin-bottom: 20px;
+    }
+    
+    .icon-red {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: block;
+      margin: 10px 0;
+    }
+    
+    .icon-red:hover {
+      color: var(--color-acento);
+      transform: translateX(5px);
+    }
+    
+    .icon-red i {
+      margin-right: 10px;
+    }
+    
+    .nav-footer a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: block;
+      margin: 5px 0;
+    }
+    
+    .nav-footer a:hover {
+      color: var(--color-acento);
+      padding-left: 5px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .title-slide-card {
+        font-size: 2rem;
+      }
+      
+      .year-establish, 
+      .year-description {
+        flex: 0 0 100%;
+        margin: 10px 0;
+      }
+      
+      .content-year-nosotros {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-custom {
+        width: 100%;
+        left: 0;
+        border-radius: 0;
+      }
+      
+      .carousel {
+        height: 80vh;
+      }
+      
+      .carousel-item {
+        height: 80vh;
+      }
+      
+      .title-slide-card {
+        font-size: 1.8rem;
+      }
+      
+      .conten-slide-custom {
+        padding: 20px;
+      }
+      
+      .btn-custom {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .year-establish h2 {
+        font-size: 2.5rem;
+      }
+      
+      .container-text h2 {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .carousel {
+        height: 70vh;
+      }
+      
+      .carousel-item {
+        height: 70vh;
+      }
+      
+      .title-slide-card {
+        font-size: 1.5rem;
+      }
+      
+      .year-establish {
+        padding: 20px;
+      }
+      
+      .year-establish h2 {
+        font-size: 2rem;
+      }
+      
+      .year-establish p {
+        font-size: 1.2rem;
+      }
+      
+      .year-description {
+        padding: 20px;
+      }
+      
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container container-custom">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top nav-custom">
-        <div class="col-6 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
-          <a class="logo" href="/"><img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo haske" width="100" height="100"></a>
-        </div>
-        <div class="col-6 col-md-6 d-flex justify-content-end justify-content-md-center">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse container-fluid" id="navbarNav">
-            <ul class="navbar-nav nav-list">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/nosotros.html">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/service.html">Servicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/html/contact.html">Contacto</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top nav-custom">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="ImperMax Logo" width="80" height="80">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto nav-list">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/service.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/contact.html">Contacto</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    
-    <div id="carouselExample" class="carousel slide mt-md-4" data-bs-ride="carousel">
-      <div class="carousel-inner slide-custom">
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url('assets/img/img-usses/pexels-ancatakespics-7839461.jpg');">
-          <div class="item-custom">
-            <div class="col-12 col-md-10 col-lg-7 col-xl-5 d-flex justify-content-center align-items-center flex-column conten-slide-custom text-center mx-auto">
-              <h1 class="fw-bold title-slide-card align-self-md-center">ImperMax - Expertos en Impermeabilización</h1>
-              <p class="d-none d-md-block" style="text-align: center;">
-                Soluciones profesionales para eliminar filtraciones, humedades y goteras. Más de 20 años protegiendo hogares y empresas con técnicas avanzadas y garantía escrita.
-              </p>
-              <div class="col-12 mt-3 mt-md-0" style="margin: auto; text-align: center;">
-                <a href="/html/contact.html" class="btn btn-custom">Solicitar Presupuesto Gratis</a>
-              </div>
-            </div>
-          </div>
-        </div>
+  </nav>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url('assets/img/img-usses/vertical-edificio.png');">
-          <div class="item-custom d-flex flex-column align-items-center justify-content-center">
-            <div class="col-12 col-md-10 col-lg-7 col-xl-5 d-flex justify-content-center align-items-center flex-column conten-slide-custom text-center mx-auto">
-              <h2 class="fw-bold title-slide-card">Trabajos Verticales Especializados</h2>
-              <p class="d-none d-md-block" style="text-align: center;">
-                Realizamos mantenimiento, reparación y limpieza en alturas con máxima seguridad. Eliminamos la necesidad de andamios con nuestro equipo certificado en técnicas de rappel.
-              </p>
-              <div class="col-12 mt-3 mt-md-0" style="margin: auto; text-align: center;">
-                <a href="/html/service.html" class="btn btn-custom">Conocer Nuestros Servicios</a>
-              </div>
-            </div>
+  <!-- Hero Carousel -->
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('assets/img/img-usses/pexels-ancatakespics-7839461.jpg');">
+        <div class="item-custom">
+          <div class="conten-slide-custom">
+            <h1 class="title-slide-card">ImperMax - Expertos en Impermeabilización</h1>
+            <p>Soluciones profesionales para eliminar filtraciones, humedades y goteras. Más de 20 años protegiendo hogares y empresas con técnicas avanzadas y garantía escrita.</p>
+            <a href="/html/contact.html" class="btn btn-custom">Solicitar Presupuesto Gratis</a>
           </div>
         </div>
       </div>
-      
-      <div class="carousel-indicators d-none d-md-flex" style="margin: auto;">
-        <button style="margin-bottom: 20px; padding: 5px; border-radius: 30%;" type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active btn-slide"></button>
-        <button style="margin-bottom: 20px; padding: 5px; border-radius: 30%;" type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" class="btn-slide"></button>
+      <div class="carousel-item" style="background-image: url('assets/img/img-usses/vertical-edificio.png');">
+        <div class="item-custom">
+          <div class="conten-slide-custom">
+            <h2 class="title-slide-card">Trabajos Verticales Especializados</h2>
+            <p>Realizamos mantenimiento, reparación y limpieza en alturas con máxima seguridad. Eliminamos la necesidad de andamios con nuestro equipo certificado en técnicas de rappel.</p>
+            <a href="/html/service.html" class="btn btn-custom">Conocer Nuestros Servicios</a>
+          </div>
+        </div>
       </div>
-      
-      <button style="opacity: 0;" class="carousel-control-prev d-none d-md-block" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button style="opacity: 0;" class="carousel-control-next d-none d-md-block" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
     </div>
-  </header>
-  
-  <main>
-    <section id="section-nosotros" class="section-nosotros py-5">
-      <div class="container">
-        <div class="d-flex  flex-md-column flex-lg-row flex-sm-column content-year-nosotros justify-content-md-center align-items-center">
-          <div class="col-12 col-md-12 m-md-3 year-establish  text-center mb-4 mb-md-0">
-            <h2 style="font-family: 'Yeseva One', sans-serif;">1998</h2>
-            <p>Año de establecimiento</p>
-          </div>
-          <div class="col-12 col-md-12 m-md-3 year-description d-flex flex-column flex-md-row align-items-center">
-            <div class="container-text me-md-4 mb-4 mb-md-0">
-              <h2 class="text-center text-md-start">¿Quienes Somos?</h2>
-              <p class="text-center text-md-start">En ImperMax, somos un equipo de profesionales certificados que utiliza técnicas avanzadas y materiales de primera calidad para garantizar resultados duraderos. Ofrecemos servicios de impermeabilización de terrazas, losas, cubiertas y fachadas, así como trabajos verticales para mantenimiento y reparación en edificaciones de cualquier altura.</p>
-            </div>
-            <div class="content-img d-none d-md-block">
-              <img src="https://media.canva.com/v2/image-resize/format:PNG/height:546/quality:100/uri:ifs%3A%2F%2FM%2F1b73f87e-0af1-45a6-9f57-69dad504d73f/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAG0Ytumaq8zwD2DEZJOjPM1QfeyGlfHz4cdAQYGlaBAM&exp=1756178987&osig=AAAAAAAAAAAAAAAAAAAAADojhsd_khOwql-lUmpy36A-cLV-19jX97udM18LHASH&signer=media-rpc&x-canva-quality=screen" alt="" class="img-fluid">
-            </div>
-          </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active btn-slide" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" class="btn-slide" aria-label="Slide 2"></button>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <!-- About Section -->
+  <section class="section-nosotros">
+    <div class="container">
+      <div class="content-year-nosotros">
+        <div class="year-establish">
+          <h2>1998</h2>
+          <p>Año de establecimiento</p>
         </div>
-        <div class="text-center mt-4">
-          <a class="btn btn-custom" href="/html/nosotros.html">Saber mas</a>
+        <div class="year-description">
+          <div class="container-text">
+            <h2>¿Quiénes Somos?</h2>
+            <p>IMPER MAX es una empresa que se dedica a brindar gran variedad de servicios en todo tipo de impermeabilizaciones, pintura en general y remodelaciones de todo tipo, con materiales de excelente calidad que le brindaran un buen servicio.</p>
+            <p>En ImperMax, somos un equipo de profesionales certificados que utiliza técnicas avanzadas y materiales de primera calidad para garantizar resultados duraderos. Ofrecemos servicios de impermeabilización de terrazas, losas, cubiertas y fachadas, así como trabajos verticales para mantenimiento y reparación en edificaciones de cualquier altura.</p>
+          </div>
+          <!-- <div class="content-img">
+            <img src="assets/img/img-usses/" alt="Equipo de ImperMax">
+          </div> -->
         </div>
       </div>
-    </section>
-    
-    <!-- Hacemos la seccion de servicios -->
-    <section id="section-servicios" class="servicios py-5">
-      <div class="container container-servicios text-center">
-        <div class="col-12">
-          <h2 style="padding-top: 50px; display: block; font-size: 2.5rem; color: #20304C; font-family: 'Yeseva One', serif; font-weight: 400; font-style: normal;">Servicios</h2>
-        </div>
-        <div class="row justify-content-center mt-4">
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-md-0 card-custom">
+      <div class="text-center mt-4">
+        <a href="/html/nosotros.html" class="btn btn-custom">Saber más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="servicios">
+    <div class="container container-servicios">
+      <h2>Servicios</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-custom">
             <div class="container-img">
-              <img src="assets/img/img-usses/FB_IMG_1751577466242.jpg" alt="" class="img-fluid">
+              <img src="assets/img/img-usses/FB_IMG_1751577466242.jpg" alt="Trabajos verticales">
             </div>
-            <div class="content-title mt-3">
+            <div class="content-title">
               <h3 style="color: #607996;"><a href="html/service.html">Trabajo vertical</a></h3>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-6 col-lg-4 card-custom">
+        </div>
+        <div class="col-md-6">
+          <div class="card card-custom">
             <div class="container-img">
-              <img src="assets/img/img-usses/impermeabilizante-prefabricado.jpg" alt="" class="img-fluid">
+              <img src="assets/img/img-usses/impermeabilizante-prefabricado.jpg" alt="Impermeabilización">
             </div>
-            <div class="content-title mt-3">
-              <h3 style="color: #b8736D;"><a href="/html/service.html">Impermeabilizacion</a></h3>
+            <div class="content-title">
+              <h3 style="color: #b8736D;"><a href="/html/service.html">Impermeabilización</a></h3>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <footer class="py-5">
-    <div class="container-fluid">
-      <div class="container container-custom-footer">
-        <div class="row container-icon-nav-menu">
-          <div class="col-12 col-md-4 container-icon text-center mb-4 mb-md-0">
-            <img src="https://media.canva.com/v2/image-resize/format:PNG/height:500/quality:100/uri:ifs%3A%2F%2FM%2F8e60d762-5ebd-48fa-9b0b-c2018471bb52/watermark:F/width:500?csig=AAAAAAAAAAAAAAAAAAAAAOTQhLksmWUCGywqnh_FaEymhRFN6RMTxgz19jDuCAqa&exp=1756248081&osig=AAAAAAAAAAAAAAAAAAAAAGbVObm44Bx_1GOKypc9X_EQ5mp3SgtJglGLVWlO6gPu&signer=media-rpc&x-canva-quality=screen_3x" alt="" class="img-fluid" style="max-height: 120px;">
-          </div>
-          <div class="col-12 col-md-4 container-redes-sociales text-center mb-4 mb-md-0">
-            <a class="icon-red d-block my-2" href="#"><i class="fab fa-facebook-f"></i><span>ImperMax</span></a>
-            <a class="icon-red d-block my-2" href="#"><i class="fab fa-twitter"></i><span>ImperMax</span></a>
-            <a class="icon-red d-block my-2" href="#"><i class="fab fa-instagram"></i><span>ImperMax</span></a>
-          </div>
-          <div class="col-12 col-md-4 container-menu text-center text-md-start">
-            <ul class="list-unstyled">
-              <li class="nav-footer mb-2"><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
-              <li class="nav-footer mb-2"><a href="/about"><i class="fas fa-users"></i> Nosotros</a></li>
-              <li class="nav-footer mb-2"><a href="/contact"><i class="fas fa-envelope"></i> Contacto</a></li>
-              <li class="nav-footer mb-2"><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="container-fluid text-center mt-4 mt-md-5">
-          <p>&copy; 2023 ImperMax. Todos los derechos reservados.</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+          <div class="container-icon">
+            <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo ImperMax">
+          </div>
+        </div>
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+          <div class="container-redes-sociales">
+            <a href="#" class="icon-red"><i class="fab fa-facebook-f"></i> ImperMax</a>
+            <a href="#" class="icon-red"><i class="fab fa-twitter"></i> ImperMax</a>
+            <a href="#" class="icon-red"><i class="fab fa-instagram"></i> ImperMax</a>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="container-menu">
+            <ul class="list-unstyled">
+              <li class="nav-footer"><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
+              <li class="nav-footer"><a href="/about"><i class="fas fa-users"></i> Nosotros</a></li>
+              <li class="nav-footer"><a href="/contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+              <li class="nav-footer"><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p>&copy; 2023 ImperMax. Todos los derechos reservados.</p>
+      </div>
+    </div>
   </footer>
-  
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-  <script src="https://unpkg.com/split-type"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>
