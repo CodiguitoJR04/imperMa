@@ -12,268 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Yaldevi:wght@200..700&family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/assets/img/img-usses/logos-removebg-preview.png">
+    <link rel="stylesheet" href="/css/styles-servicios.css">
     <title>Servicios - ImperMax</title>
-    <style>
-        :root {
-            --color-primario: #20304C;
-            --color-secundario: #3A5074;
-            --color-acento: #b8736D;
-            --color-claro: #f8f9fa;
-            --color-oscuro: #212529;
-            --fuente-principal: 'Yeseva One', serif;
-            --fuente-secundaria: 'Yaldevi', sans-serif;
-        }
-        
-        body {
-            font-family: var(--fuente-secundaria);
-            color: var(--color-oscuro);
-        }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: var(--fuente-principal);
-        }
-        
-        /* Navegación */
-        .nav-custom {
-            padding: 10px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            background-color: white !important;
-            position: relative;
-            width: 100%;
-            z-index: 1020;
-        }
-        
-        .nav-list .nav-link {
-            color: var(--color-primario) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            transition: all 0.3s;
-        }
-        
-        .nav-list .nav-link:hover, 
-        .nav-list .nav-link.active {
-            color: var(--color-secundario) !important;
-            border-bottom: 2px solid var(--color-secundario);
-            background-color: transparent !important;
-        }
-        
-        /* Sección principal */
-        .one-model-present {
-            padding: 80px 0;
-            background-color: var(--color-claro);
-        }
-        
-        .title-one-modal {
-            color: var(--color-primario);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .btn-custom {
-            background-color: var(--color-primario);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-custom:hover {
-            background-color: var(--color-secundario);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        /* Sección de servicios */
-        .cajas-servicios {
-            padding: 60px 0;
-        }
-        
-        .container-vertical-tarjet-custom {
-            background-color: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-        
-        .img-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .title-card-service {
-            color: var(--color-primario);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .description-card {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .btn-custom-card .btn {
-            background-color: var(--color-acento);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        
-        .btn-custom-card .btn:hover {
-            background-color: var(--color-primario);
-            transform: translateY(-2px);
-        }
-        
-        /* Sección de detalles */
-        .vertical-especifi {
-            background-color: var(--color-primario);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 20px 0;
-        }
-        
-        .vertical-especifi h2 {
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .vertical-especifi ul {
-            padding-left: 20px;
-        }
-        
-        .vertical-especifi li {
-            color: white;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        .svg-vertical {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--color-oscuro);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .container-icon img {
-            max-height: 120px;
-            margin-bottom: 20px;
-        }
-        
-        .icon-red {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-            margin: 10px 0;
-        }
-        
-        .icon-red:hover {
-            color: var(--color-acento);
-            transform: translateX(5px);
-        }
-        
-        .icon-red i {
-            margin-right: 10px;
-        }
-        
-        .nav-footer a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-            margin: 5px 0;
-        }
-        
-        .nav-footer a:hover {
-            color: var(--color-acento);
-            padding-left: 5px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .title-one-modal {
-                font-size: 2rem;
-            }
-            
-            .title-card-service {
-                font-size: 1.6rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .one-model-present {
-                padding: 60px 0;
-            }
-            
-            .title-one-modal {
-                font-size: 1.8rem;
-                text-align: center;
-            }
-            
-            .container-vertical-tarjet-custom {
-                padding: 20px;
-            }
-            
-            .title-card-service {
-                font-size: 1.5rem;
-                text-align: center;
-            }
-            
-            .description-card {
-                text-align: center;
-            }
-            
-            .btn-custom {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .vertical-especifi h2 {
-                font-size: 1.6rem;
-            }
-            
-            .vertical-especifi li {
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .one-model-present {
-                padding: 40px 0;
-            }
-            
-            .title-one-modal {
-                font-size: 1.5rem;
-            }
-            
-            .cajas-servicios {
-                padding: 40px 0;
-            }
-            
-            .vertical-especifi {
-                padding: 20px;
-            }
-            
-            .vertical-especifi h2 {
-                font-size: 1.4rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -329,7 +69,7 @@
         
         <section id="trabajos">
             <!-- Trabajos verticales -->
-            <div class="container-fluid cajas-servicios" style="background-color: #f2f2f2;">
+            <div class="container-fluid cajas-servicios" style="background-color: #f2f2f2;" id="trabajos-verticales">
                 <div class="container">
                     <div class="row container-vertical-tarjet-custom align-items-center">
                         <div class="col-12 col-md-6 img-card mb-4 mb-md-0">
@@ -338,10 +78,10 @@
                         <div class="col-12 col-md-6 d-flex flex-column align-items-center text-center">
                             <h3 class="title-card-service">Trabajo vertical</h3>
                             <p class="description-card">
-                                En <strong>ImperMax</strong> ofrecemos <strong>trabajos verticales especializados</strong> para mantenimiento y reparación en alturas. Nuestros servicios incluyen <strong>limpieza de fachadas</strong>, <strong>reparación de grietas</strong>, <strong>pintura en alturas</strong> y <strong>instalaciones en edificios</strong>. Contamos con <strong>técnicos certificados</strong> en técnicas de rappel y <strong>equipo de seguridad profesional</strong>. Soluciones seguras y eficientes sin necesidad de andamios.
+                                En <strong>ImperMax</strong> ofrecemos <strong>trabajos verticales especializados</strong> para mantenimiento y reparación en alturas. Nuestros servicios incluyen <strong>limpieza de fachadas</strong>, <strong>reparación de grietas</strong>, <strong>pintura en alturas</strong> и <strong>instalaciones en edificios</strong>. Contamos con <strong>técnicos certificados</strong> en técnicas de rappel y <strong>equipo de seguridad profesional</strong>. Soluciones seguras y eficientes sin necesidad de andamios.
                             </p>
                             <div class="btn-custom-card">
-                                <button class="btn" onclick="mostrarSiguienteModal();">Ver más</button>
+                                <button class="btn btn-custom" onclick="mostrarSiguienteModal(0);">Ver más</button>
                             </div>  
                         </div> 
                     </div>
@@ -349,18 +89,18 @@
             </div>
             
             <!-- Detalles trabajos verticales -->
-            <div class="container-fluid cajas-servicios">
+            <div class="container-fluid cajas-servicios vertical-especifi" id="detalles-verticales">
                 <div class="container">
-                    <div class="row vertical-especifi align-items-center">
+                    <div class="row align-items-center">
                         <div class="col-12 col-md-3 text-center mb-4 mb-md-0">
                             <div class="d-flex justify-content-center mb-3">
-                                <button onclick="regresarModal(1);" class="btn"><i style="color: #f2f2f2;" class="fas fa-arrow-left"></i></button>
+                                <button onclick="regresarModal(0);" class="btn btn-custom"><i style="color: #f2f2f2;" class="fas fa-arrow-left"></i> Volver</button>
                             </div>
                             <h2>Trabajo Vertical</h2>
                         </div>
                         <div class="col-12 col-md-3 text-center mb-4 mb-md-0">
                             <svg class="svg-vertical" viewBox="0 0 179 597" xmlns="http://www.w3.org/2000/svg">
-                                <path style="fill:#000000" d="m 46.209164,515.64019 v -76.44911 l -3.50148,-2.67071 c -1.92582,-1.46889 -8.52342,-5.11285 -14.66134,-8.09768 -14.14847,-6.88031 -16.83718,-8.78757 -16.83718,-11.94364 0,-9.87783 7.33143,-30.04321 15.04787,-41.38975 6.10175,-8.97225 5.76146,-19 -0.64476,-19 -3.79925,0 -5.74527,-11.50387 -2.8825,-17.03985 2.79935,-5.41335 12.33157,-8.48765 18.75025,-6.04727 5.58301,2.12266 11.76059,11.21358 8.84462,13.01575 -0.76588,0.47334 -1.06426,3.6454 -0.88534,9.4122 l 0.26986,8.69824 4,-0.58382 c 3.26136,-0.47602 5.01564,-0.0213 9.5,2.46235 7.24399,4.01208 7.35066,3.98366 9.39532,-2.50274 1.60548,-5.09318 1.62157,-5.73872 0.18262,-7.32874 -2.31284,-2.55566 -2.05869,-8.76894 0.42206,-10.31819 1.98717,-1.24101 2,-2.33203 2,-170.09181 0,-134.62977 0.25329,-168.7583526 1.25,-168.4261276 0.9921,0.3306894 1.30218,35.3176236 1.50289,169.5752676 0.22952,153.52275 0.40107,169.33169 1.856,171.03093 3.36856,3.93419 7.57691,16.28222 5.97003,17.51712 -0.95272,0.73217 -1.83366,4.50603 -2.51584,10.77755 -1.54053,14.1627 -1.184,13.73798 -8.96938,10.68493 -2.59356,-1.01707 -3.50372,-1.05094 -3.81461,-0.14197 -0.22457,0.65661 -1.05423,0.94596 -1.8437,0.64301 -2.13078,-0.81766 -1.80047,0.61106 2.14744,9.28833 8.14419,17.90044 9.10332,18.31034 30.125776,12.87484 16.92141,-4.37515 21.50377,-4.51315 24.90298,-0.75 1.36622,1.5125 8.22736,9.275 15.24698,17.25 l 12.76293,14.5 h 4.40721 c 4.27623,0 4.44004,-0.117 5.51175,-3.93674 2.36036,-8.41268 7.45954,-6.97322 7.45954,2.10578 0,5.93182 -7.63871,21.33096 -10.58117,21.33096 -0.77338,0 -5.04434,-3.2625 -9.49104,-7.25 -9.28853,-8.32933 -10.37259,-9.03473 -18.1935,-11.83848 -4.66765,-1.67333 -6.57211,-3.08899 -10,-7.43343 -6.61977,-8.38978 -10.73429,-7.23897 -10.73429,3.00231 0,2.36332 -5.86744,3.49391 -18.228936,3.51249 -2.60093,0.004 -8.22593,1.18719 -12.5,2.6295 -11.89932,4.0155 -14.27126,3.7872 -20.07832,-1.93255 l -4.84813,-4.77523 -3.6723,3.3637 -3.67231,3.3637 v 74.67899 c 0,65.71467 -0.18006,74.679 -1.5,74.679 -1.32025,0 -1.5,-9.16101 -1.5,-76.44911 z m -1.76116,-91.42307 c 3.13237,1.6764 2.89692,0.6583 -1.42573,-6.16491 -2.25192,-3.5546 -5.54729,-9.07823 -7.32305,-12.27472 -2.26546,-4.07802 -3.40743,-5.34589 -3.82796,-4.25 -0.32963,0.85899 -1.28845,1.56181 -2.13071,1.56181 -0.84227,0 -1.53139,0.41547 -1.53139,0.92327 0,0.50781 -1.18785,2.33496 -2.63966,4.06034 -3.02992,3.60085 -3.44077,2.97347 7.13966,10.90239 4.7223,3.53887 8.37005,5.62897 8.9032,5.10138 0.5309,-0.52536 1.69974,-0.46747 2.83564,0.14044 z"/>
+                                <path style="fill:#000000" d="m 46.209164,515.64019 v -76.44911 l -3.50148,-2.67071 c -1.92582,-1.46889 -8.52342,-5.11285 -14.66134,-8.09768 -14.14847,-6.88031 -16.83718,-8.78757 -16.83718,-11.94364 0,-9.87783 7.33143,-30.04321 15.04787,-41.38975 6.10175,-8.97225 5.76146,-19 -0.64476,-19 -3.79925,0 -5.74527,-11.50387 -2.8825,-17.03985 2.79935,-5.41335 12.33157,-8.48765 18.75025,-6.04727 5.58301,2.12266 11.76059,11.21358 8.84462,13.01575 -0.76588,0.47334 -1.06426,3.6454 -0.88534,9.4122 l 0.26986,8.69824 4,-0.58382 c 3.26136,-0.47602 5.01564,-0.0213 9.5,2.46235 7.24399,4.01208 7.35066,3.98366 9.39532,-2.50274 1.60548,-5.09318 1.62157,-5.73872 0.18262,-7.32874 -2.31284,-2.55566 -2.05869,-8.76894 0.42206,-10.31819 1.98717,-1.24101 2,-2.33203 2,-170.09181 0,-134.62977 0.25329,-168.7583526 1.25,-168.4261276 0.9921,0.3306894 1.30218,35.3176236 1.50289,169.5752676 0.22952,153.52275 0.40107,169.33169 1.856,171.03093 3.36856,3.93419 7.57691,16.28222 5.97003,17.51712 -0.95272,0.73217 -1.83366,4.50603 -2.51584,10.77755 -1.54053,14.1627 -1.184,13.73798 -8.96938,10.68493 -2.59356,-1.01707 -3.50372,-1.05094 -3.81461,-0.14197 -0.22457,0.65661 -1.05423,0.94596 -1.8437,0.64301 -2.13078,-0.81766 -1.80047,0.61106 2.14744,9.28833 8.14419,17.90044 9.10332,18.31034 30.125776,12.87484 16.92141,-4.37515 21.50377,-4.51315 24.90298,-0.75 1.36622,1.5125 8.22736,9.275 15.24698,17.25 l 12.76293,14.5 h 4.40721 c 4.27623,0 4.44004,-0.117 5.51175,-3.93674 2.36036,-8.41268 7.45954,-6.97322 7.45954,2.10578 0,5.93182 -7.63871,21.33096 -10.58117,21.33096 -0.77338,0 -5.04434,-3.2625 -9.49104,-7.25 -9.28853,-8.32933 -10.37259,-9.03473 -18.1935,-11.83848 -4.66765,-1.67333 -6.57211,-3.08899 -10,-7.43343 -6.61977,-8.38978 -10.73429,-7.23897 -10.73429,3.00231 0,2.36332 -5.86744,3.49391 -18.228936,3.51249 -2.60093,0.004 -8.22593,1.18719 -12.5,2.6295 -11.89932,4.0155 -14.27126,3.7872 -20.07832,-1.93255 l -4.84813,-4.77523 -3.6723,3.3637 -3.67231,3.3637 v 74.67899 c 0,65.71467 -0.18006,74.679 -1.5,74.679 -1.32025,0 -1.5,-9.16101 -1.5,-76.44911 z m -1.76116,-91.42307 c 3.13237,1.6764 2.89692,0.6583 -1.42573,-6.16491 -2.25192,-3.5546 -5.54729,-9.07823 -7.32305,-12.27472 -2.26546,-4.07802 -3.40743,-5.34589 -3.82796,-4.25 -0.32963,0.85899 -1.28845,1.56181 -2.13071,1.56181 -0.84227,0 -1.53139,0.41547 -1.53139,0.92327 极，2.33496 -2.63966,4.06034 -3.02992,3.60085 -3.44077,2.97347 7.13966,10.90239 4.7223,3.53887 8.37005,5.62897 8.9032,5.10138 0.5309,-0.52536 1.69974,-0.46747 2.83564,0.14044 z"/>
                             </svg>
                         </div>
                         <div class="col-12 col-md-6">
@@ -376,11 +116,9 @@
                     </div>
                 </div>
             </div>  
-        </section>
-        
-        <section>
+            
             <!-- Impermeabilización -->
-            <div class="container-fluid cajas-servicios" style="background-color: #f2f2f2;">
+            <div class="container-fluid cajas-servicios" style="background-color: #f2f2f2;" id="impermeabilizacion">
                 <div class="container">
                     <div class="row container-vertical-tarjet-custom align-items-center flex-row-reverse">
                         <div class="col-12 col-md-6 img-card mb-4 mb-md-0">
@@ -392,8 +130,35 @@
                                 <strong>Impermeabilización profesional</strong> con garantía en <strong>ImperMax</strong>. Eliminamos <strong>filtraciones de agua</strong>, <strong>humedades</strong> y <strong>goteras</strong> definitivamente. Aplicamos <strong>membranas líquidas</strong>, <strong>sellado de techos</strong> y <strong>terrazas</strong> con materiales de primera calidad. Soluciones para <strong>azoteas</strong>, <strong>cisternas</strong> y <strong>muros</strong>. ¡Protección duradera con garantía escrita!
                             </p>
                             <div class="btn-custom-card">
-                                <button onclick="mostrarSiguienteModal(1);" class="btn">Ver más</button>
+                                <button onclick="mostrarSiguienteModal(1);" class="btn btn-custom">Ver más</button>
                             </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detalles impermeabilización -->
+            <div class="container-fluid cajas-servicios impermeabilizacion-especifi" id="detalles-impermeabilizacion">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-3 text-center mb-4 mb-md-0">
+                            <div class="d-flex justify-content-center mb-3">
+                                <button onclick="regresarModal(1);" class="btn btn-custom"><i style="color: #f2f2f2;" class="fas fa-arrow-left"></i> Volver</button>
+                            </div>
+                            <h2>Impermeabilización</h2>
+                        </div>
+                        <div class="col-12 col-md-3 text-center mb-4 mb-md-0">
+                            <i class="fas fa-tint-slash" style="font-size: 100px; color: #3498db;"></i>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <ul>
+                                <li><strong>Aplicación de membranas líquidas</strong> para todo tipo de superficies</li>
+                                <li><strong>Sellado integral de techos</strong> y azoteas con materiales de alta calidad</li>
+                                <li><strong>Impermeabilización de cisternas</strong> y depósitos de agua</li>
+                                <li><strong>Tratamiento antihongos</strong> y anti humedades en paredes</li>
+                                <li><strong>Reparación de goteras</strong> y filtraciones con garantía</li>
+                                <li><strong>Impermeabilización de terrazas</strong> y balcones</li>
+                            </ul>  
                         </div> 
                     </div>
                 </div>
@@ -401,23 +166,23 @@
         </section>
     </main>
     
-    <footer>
+    <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="row container-icon-nav-menu">
                 <div class="col-12 col-md-4 container-icon text-center mb-4 mb-md-0">
-                    <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo ImperMax" class="img-fluid">
+                    <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo ImperMax" class="img-fluid" width="100">
                 </div>
                 <div class="col-12 col-md-4 container-redes-sociales text-center mb-4 mb-md-0">
-                    <a class="icon-red" href="#"><i class="fab fa-facebook-f"></i><span> ImperMax</span></a>
-                    <a class="icon-red" href="#"><i class="fab fa-twitter"></i><span> ImperMax</span></a>
-                    <a class="icon-red" href="#"><i class="fab fa-instagram"></i><span> ImperMax</span></a>
+                    <a class="icon-red text-white d-block my-2" href="#"><i class="fab fa-facebook-f"></i><span> ImperMax</span></a>
+                    <a class="icon-red text-white d-block my-2" href="#"><i class="fab fa-twitter"></i><span> ImperMax</span></a>
+                    <a class="icon-red text-white d-block my-2" href="#"><i class="fab fa-instagram"></i><span> ImperMax</span></a>
                 </div>
                 <div class="col-12 col-md-4 container-menu text-center">
                     <ul class="list-unstyled">
-                        <li class="nav-footer"><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
-                        <li class="nav-footer"><a href="/about"><i class="fas fa-users"></i> Nosotros</a></li>
-                        <li class="nav-footer"><a href="/contact"><i class="fas fa-envelope"></i> Contacto</a></li>
-                        <li class="nav-footer"><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+                        <li class="nav-footer my-2"><a href="/" class="text-white"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li class="nav-footer my-2"><a href="/about" class="text-white"><i class="fas fa-users"></i> Nosotros</a></li>
+                        <li class="nav-footer my-2"><a href="/contact" class="text-white"><i class="fas fa-envelope"></i> Contacto</a></li>
+                        <li class="nav-footer my-2"><a href="/blog" class="text-white"><i class="fas fa-blog"></i> Blog</a></li>
                     </ul>
                 </div>
             </div>
@@ -431,12 +196,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-    <script src="../js/index.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>

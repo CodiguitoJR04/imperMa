@@ -12,210 +12,130 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Yaldevi:wght@200..700&family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/assets/img/img-usses/logos-removebg-preview.png">
+    <link rel="stylesheet" href="/css/styles-nosotros.css">
     <title>Nosotros - ImperMax</title>
     <style>
-        :root {
-            --color-primario: #20304C;
-            --color-secundario: #3A5074;
-            --color-acento: #b8736D;
-            --color-claro: #f8f9fa;
-            --color-oscuro: #212529;
-            --fuente-principal: 'Yeseva One', serif;
-            --fuente-secundaria: 'Yaldevi', sans-serif;
+        /* Estilos mejorados para la galería */
+        .galeria {
+            padding: 60px 0;
+            background-color: #f8f9fa;
         }
         
-        body {
-            font-family: var(--fuente-secundaria);
-            color: var(--color-oscuro);
+        .galeria h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Yeseva One', serif;
+            color: #2c3e50;
         }
         
-        h1, h2, h3, h4, h5 {
-            font-family: var(--fuente-principal);
+        .categoria-titulo {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffc107;
+            font-family: 'Yeseva One', serif;
+            color: #2c3e50;
         }
         
-        /* Navegación */
-        .nav-custom {
-            padding: 10px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            background-color: white !important;
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .galeria-item {
             position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .galeria-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .galeria-img {
             width: 100%;
-            z-index: 1020;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
         
-        .nav-list .nav-link {
-            color: var(--color-primario) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            transition: all 0.3s;
+        .galeria-item:hover .galeria-img {
+            transform: scale(1.05);
         }
         
-        .nav-list .nav-link:hover, 
-        .nav-list .nav-link.active {
-            color: var(--color-secundario) !important;
-            border-bottom: 2px solid var(--color-secundario);
-            background-color: transparent !important;
-        }
-        
-        /* Contenido principal */
-        .content-title-logo {
-            padding: 80px 0;
-            background-color: var(--color-claro);
-        }
-        
-        .container-logo img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .content-title-logo h2 {
-            color: var(--color-primario);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .content-title-logo p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .content-title-logo h3 {
-            font-style: italic;
-            color: var(--color-acento);
-            margin: 30px 0;
-            font-size: 1.5rem;
-        }
-        
-        .chat-icon {
-            font-size: 3rem;
-            color: var(--color-primario);
-            margin: 30px 0;
-        }
-        
-        .btn-custom {
-            background-color: var(--color-primario);
+        .galeria-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
             color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .galeria-item:hover .galeria-overlay {
+            transform: translateY(0);
+        }
+        
+        .galeria-overlay h4 {
+            margin-bottom: 10px;
+            font-family: 'Yeseva One', serif;
+        }
+        
+        /* Modal mejorado */
+        .modal-galeria .modal-content {
+            background-color: rgba(0, 0, 0, 0.85);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .modal-galeria .btn-close {
+            filter: invert(1);
+            opacity: 0.8;
+        }
+        
+        .modal-galeria .btn-close:hover {
+            opacity: 1;
+        }
+        
+        .modal-galeria .modal-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .modal-galeria-carousel .carousel-item img {
+            border-radius: 5px;
+            max-height: 500px;
+            object-fit: contain;
+        }
+        
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            padding: 15px;
+            left: 5%;
+            right: 5%;
+            bottom: 20px;
+        }
+        
+        .material-info {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .material-info h6 {
+            color: #ffc107;
             font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .btn-custom:hover {
-            background-color: var(--color-secundario);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--color-oscuro);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .container-icon img {
-            max-height: 120px;
-            margin-bottom: 20px;
-        }
-        
-        .icon-red {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-            margin: 10px 0;
-        }
-        
-        .icon-red:hover {
-            color: var(--color-acento);
-            transform: translateX(5px);
-        }
-        
-        .icon-red i {
-            margin-right: 10px;
-        }
-        
-        .nav-footer a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: block;
-            margin: 5px 0;
-        }
-        
-        .nav-footer a:hover {
-            color: var(--color-acento);
-            padding-left: 5px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .content-title-logo h2 {
-                font-size: 2rem;
-            }
-            
-            .content-title-logo h3 {
-                font-size: 1.3rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-custom {
-                border-radius: 0;
-            }
-            
-            .content-title-logo {
-                padding: 60px 0;
-            }
-            
-            .content-title-logo h2 {
-                font-size: 1.8rem;
-            }
-            
-            .content-title-logo h3 {
-                font-size: 1.2rem;
-            }
-            
-            .btn-custom {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .container-icon-nav-menu {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .container-icon, 
-            .container-redes-sociales, 
-            .container-menu {
-                margin-bottom: 30px;
-                width: 100%;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .content-title-logo {
-                padding: 40px 0;
-            }
-            
-            .content-title-logo h2 {
-                font-size: 1.5rem;
-            }
-            
-            .content-title-logo p {
-                font-size: 1rem;
-            }
-            
-            .chat-icon {
-                font-size: 2.5rem;
-            }
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -275,11 +195,114 @@
             </div>
           </div>
         </section>
+
+        <!-- Galería de Trabajos - Mejorada -->
+        <section class="galeria">
+            <div class="container">
+                <h2>Nuestros Trabajos</h2>
+                
+                <!-- Impermeabilización -->
+                <h3 class="categoria-titulo">Impermeabilización</h3>
+                <div class="galeria-grid">
+                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="impermeabilizacion" data-imagen="1">
+                        <img src="https://images.unsplash.com/photo-1628744404730-5e143358539b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Impermeabilización de techo con membrana líquida polimérica" class="galeria-img">
+                        <div class="galeria-overlay">
+                            <h4>Impermeabilización de Techo</h4>
+                            <p>Membrana líquida de poliuretano para máxima durabilidad</p>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="impermeabilizacion" data-imagen="2">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Aplicación de membrana asfáltica para impermeabilización" class="galeria-img">
+                        <div class="galeria-overlay">
+                            <h4>Aplicación de Membrana</h4>
+                            <p>Membrana asfáltica autoprotegida con garantía extendida</p>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="impermeabilizacion" data-imagen="3">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9d33f465dea5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Sellado de terraza con productos de alta resistencia" class="galeria-img">
+                        <div class="galeria-overlay">
+                            <h4>Sellado de Terraza</h4>
+                            <p>Sellado elastomérico para terrazas expuestas a condiciones climáticas extremas</p>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="impermeabilizacion" data-imagen="4">
+                        <img src="https://images.unsplash.com/photo-1581092581090-4d3134e4dc2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Impermeabilización de cisterna con membranas especializadas" class="galeria-img">
+                        <div class="galeria-overlay">
+                            <h4>Impermeabilización de Cisterna</h4>
+                            <p>Membranas especializadas para contacto con agua potable</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trabajos Verticales -->
+                <h3 class="categoria-titulo">Trabajos Verticales</h3>
+                <div class="galeria-grid">
+                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="verticales" data-imagen="1">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Limpieza de fachada con técnicas de trabajos verticales" class="galeria-img">
+                        <div class="galeria-overlay">
+                            <h4>Limpieza de Fachada</h4>
+                            <p>Limpieza con agua a presión y productos ecológicos especializados</p>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="verticales" data-imagen="2">
+                        <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Reparación en altura con técnicas de acceso por cuerda" class="galeria-img">
+                        <div class="galeria-overlay">
+                            <h4>Reparación en Altura</h4>
+                            <p>Reparación de grietas y fisuras con morteros de reparación estructural</p>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="verticales" data-imagen="3">
+                        <img src="https://images.unsplash.com/photo-1581094271909-89be1f824a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Pintura en altura con productos de alta durabilidad" class="galeria-img">
+                        <div class="galeria-overlay">
+                            <h4>Pintura en Altura</h4>
+                            <p>Pinturas elastoméricas y de alta resistencia para fachadas</p>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="verticales" data-imagen="4">
+                        <img src="https://images.unsplash.com/photo-1581093459667-2d7d6a8c6c6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Mantenimiento vertical con equipos de seguridad especializados" class="galeria-img">
+                        <div class="galeria-overlay">
+                            <h4>Mantenimiento Vertical</h4>
+                            <p>Mantenimiento preventivo y correctivo de fachadas y estructuras altas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    
+    <!-- Modal para Galería - Mejorado -->
+    <div class="modal fade modal-galeria" id="modalGaleria" tabindex="-1" aria-labelledby="modalGaleriaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalGaleriaLabel">Galería de Trabajos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselGaleria" class="carousel slide modal-galeria-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="carousel-inner-content">
+                            <!-- El contenido se cargará dinámicamente con JavaScript -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                    <div class="material-info" id="material-info-content">
+                        <!-- El contenido se cargará dinámicamente con JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <footer>
       <div class="container">
-        <div class="row container-icon-nav-menu">
+        <div class="row">
           <div class="col-12 col-md-4 container-icon text-center mb-4 mb-md-0">
             <img src="/assets/img/img-usses/logos-removebg-preview.png" alt="Logo ImperMax" class="img-fluid">
           </div>
@@ -306,6 +329,125 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script>
+        // Datos de las galerías con información SEO mejorada
+        const galerias = {
+            impermeabilizacion: {
+                titulo: "Impermeabilización",
+                imagenes: [
+                    {
+                        src: "https://images.unsplash.com/photo-1628744404730-5e143358539b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+                        title: "Impermeabilización de Techo",
+                        description: "Aplicación de membrana líquida en techo plano con garantía de 10 años.",
+                        material: "Membrana líquida de poliuretano",
+                        materialInfo: "La membrana líquida de poliuretano que utilizamos ofrece una protección superior contra filtraciones de agua. Este material de alta tecnología forma una barrera continua y elástica que se adapta a las dilataciones térmicas, evitando grietas y garantizando una impermeabilización duradera incluso en condiciones climáticas extremas."
+                    },
+                    {
+                        src: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+                        title: "Aplicación de Membrana",
+                        description: "Proceso de aplicación de membrana asfáltica en terraza exterior.",
+                        material: "Membrana asfáltica autoprotegida",
+                        materialInfo: "Nuestras membranas asfálticas autoprotegidas incluyen una capa superficial que las protege de los rayos UV y el desgaste mecánico. Este sistema de impermeabilización es ideal para terrazas transitables, proporcionando resistencia al agua, durabilidad y protección contra factores ambientales con una vida útil extendida."
+                    },
+                    {
+                        src: "https://images.unsplash.com/photo-1581093458791-9d33f465dea5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+                        title: "Sellado de Terraza",
+                        description: "Trabajo de sellado completo en terraza con materiales de alta calidad.",
+                        material: "Sellador elastomérico",
+                        materialInfo: "Nuestro sellador elastomérico de alto rendimiento está formulado específicamente para terrazas expuestas a condiciones climáticas extremas. Este material mantiene su flexibilidad en temperaturas variables, resiste la intemperie y los rayos UV, y proporciona una barrera impermeable que evita filtraciones y daños por humedad."
+                    },
+                    {
+                        src: "https://images.unsplash.com/photo-1581092581090-4d3134e4dc2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+                        title: "Impermeabilización de Cisterna",
+                        description: "Proceso de impermeabilización de cisterna con productos especializados.",
+                        material: "Membrana para agua potable",
+                        materialInfo: "Para cisternas y depósitos de agua potable, utilizamos membranas especializadas certificadas para contacto con agua de consumo humano. Estos materiales no alteran las propiedades del agua, son resistentes a microorganismos y proporcionan una impermeabilización completa que previene filtraciones y contaminación externa."
+                    }
+                ]
+            },
+            verticales: {
+                titulo: "Trabajos Verticales",
+                imagenes: [
+                    {
+                        src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+                        title: "Limpieza de Fachada",
+                        description: "Limpieza especializada de fachada en edificio de 10 pisos.",
+                        material: "Sistema de limpieza ecológico",
+                        materialInfo: "Nuestro sistema de limpieza de fachadas utiliza productos ecológicos y técnicas de agua a presión controlada que eliminan suciedad, contaminantes y organismos biológicos sin dañar los materiales de construcción. Este método es seguro para el medio ambiente y restaura la apariencia original de las fachadas sin deteriorarlas."
+                    },
+                    {
+                        src: "https://images.unsplash.com/photo-1615529328331-f8917597711f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+                        title: "Reparación en Altura",
+                        description: "Reparación de grietas y daños en muro exterior con técnicas de rappel.",
+                        material: "Morteros de reparación estructural",
+                        materialInfo: "Para reparaciones en altura, utilizamos morteros de reparación estructural de altas prestaciones. Estos materiales tienen excelente adherencia, resistencia mecánica y durabilidad, permitiendo restaurar la integridad estructural de fachadas y elementos constructivos dañados, incluso en condiciones de difícil acceso."
+                    },
+                    {
+                        src: "https://images.unsplash.com/photo-1581094271909-89be1f824a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+                        title: "Pintura en Altura",
+                        description: "Trabajos de pintura especializada en fachada de edificio histórico.",
+                        material: "Pinturas elastoméricas",
+                        materialInfo: "Nuestras pinturas elastoméricas para fachadas ofrecen una protección superior gracias a su capacidad de expandirse y contraerse con los cambios térmicos, evitando grietas y descamaciones. Forman una película continua que resiste la humedad, los rayos UV y la contaminación ambiental, manteniendo su aspecto y propiedades durante años."
+                    },
+                    {
+                        src: "https://images.unsplash.com/photo-1581093459667-2d7d6a8c6c6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+                        title: "Mantenimiento Vertical",
+                        description: "Mantenimiento preventivo en fachada con equipo de seguridad especializado.",
+                        material: "Sistemas de protección y conservación",
+                        materialInfo: "Nuestros sistemas de mantenimiento vertical incluyen tratamientos protectores que prolongan la vida útil de las fachadas. Aplicamos hidrofugantes que repelen el agua, conservantes que previenen el deterioro biológico y productos que mejoran la resistencia a la intemperie, todo ello con técnicas de acceso por cuerda que garantizan seguridad y precisión."
+                    }
+                ]
+            }
+        };
+
+        // Configurar el modal cuando se hace clic en una imagen
+        document.addEventListener('DOMContentLoaded', function() {
+            const modalGaleria = document.getElementById('modalGaleria');
+            
+            modalGaleria.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const categoria = button.getAttribute('data-categoria');
+                const imagenIndex = parseInt(button.getAttribute('data-imagen')) - 1;
+                
+                // Actualizar el título del modal
+                const modalTitle = modalGaleria.querySelector('.modal-title');
+                modalTitle.textContent = galerias[categoria].titulo;
+                
+                // Generar el contenido del carousel
+                const carouselInner = modalGaleria.querySelector('#carousel-inner-content');
+                carouselInner.innerHTML = '';
+                
+                galerias[categoria].imagenes.forEach((imagen, index) => {
+                    const activeClass = index === imagenIndex ? 'active' : '';
+                    const carouselItem = document.createElement('div');
+                    carouselItem.className = `carousel-item ${activeClass}`;
+                    carouselItem.innerHTML = `
+                        <img src="${imagen.src}" class="d-block w-100" alt="${imagen.title}">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>${imagen.title}</h5>
+                            <p>${imagen.description}</p>
+                        </div>
+                    `;
+                    carouselInner.appendChild(carouselItem);
+                });
+                
+                // Generar información del material
+                const materialInfo = modalGaleria.querySelector('#material-info-content');
+                const imagenData = galerias[categoria].imagenes[imagenIndex];
+                materialInfo.innerHTML = `
+                    <h6>Material utilizado: ${imagenData.material}</h6>
+                    <p>${imagenData.materialInfo}</p>
+                `;
+            });
+        });
+    </script>
     <script src="/js/index.js"></script>
 </body>
 </html>

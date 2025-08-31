@@ -76,15 +76,17 @@
     }
     
     .conten-slide-custom {
-      background: rgba(255, 255, 255, 0.9);
+      background: transparent;
       padding: 30px;
       border-radius: 15px;
       max-width: 90%;
       text-align: center;
+      color: #f8f9fa;
+      box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
     }
     
     .title-slide-card {
-      color: var(--color-primario);
+      color: #f8f9fa;
       font-size: 2.5rem;
       margin-bottom: 20px;
     }
@@ -102,7 +104,7 @@
     }
     
     .btn-custom:hover {
-      background-color: var(--color-secundario);
+      background-color: #a7473b;
       color: white;
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -126,70 +128,74 @@
       background-color: var(--color-secundario);
     }
     
-    /* Sección Nosotros - MODIFICADA */
+    /* Sección Nosotros */
     .section-nosotros {
       background-color: var(--color-claro);
       padding: 80px 0;
     }
     
-    .nosotros-container {
+    .content-year-nosotros {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
       flex-wrap: wrap;
-    }
-    
-    .nosotros-texto {
-      flex: 1;
-      min-width: 300px;
-      padding: 20px;
-    }
-    
-    .nosotros-imagen {
-      flex: 1;
-      min-width: 300px;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    .nosotros-imagen img {
-      max-width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      justify-content: center;
+      align-items: center;
     }
     
     .year-establish {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       border-radius: 45px;
       background-color: rgba(167, 71, 59, 0.8);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 30px auto;
-      max-width: 250px;
+      margin: 20px;
+      flex: 0 0 300px;
     }
     
     .year-establish h2 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: white;
       margin-bottom: 10px;
     }
     
     .year-establish p {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       color: white;
       margin: 0;
     }
     
-    .nosotros-texto h2 {
+    .year-description {
+      background-color: white;
+      padding: 30px;
+      border-radius: 45px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      margin: 20px;
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+    }
+    
+    .container-text h2 {
       color: #a7473b;
       font-size: 2.2rem;
       margin-bottom: 20px;
+      text-align: center;
     }
     
-    .nosotros-texto p {
+    .container-text p {
       font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 20px;
+    }
+    
+    .content-img {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .content-img img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     
     /* Sección Servicios */
@@ -300,12 +306,14 @@
         font-size: 2rem;
       }
       
-      .nosotros-container {
-        flex-direction: column;
+      .year-establish, 
+      .year-description {
+        flex: 0 0 100%;
+        margin: 10px 0;
       }
       
-      .nosotros-texto, .nosotros-imagen {
-        width: 100%;
+      .content-year-nosotros {
+        flex-direction: column;
       }
     }
     
@@ -337,7 +345,11 @@
         font-size: 0.9rem;
       }
       
-      .nosotros-texto h2 {
+      .year-establish h2 {
+        font-size: 2.5rem;
+      }
+      
+      .container-text h2 {
         font-size: 1.8rem;
       }
     }
@@ -355,7 +367,20 @@
         font-size: 1.5rem;
       }
       
-      .year-establish h2 {
-        font-size: 2.5rem;
+      .year-establish {
+        padding: 20px;
       }
+      
+      .year-establish h2 {
+        font-size: 2rem;
+      }
+      
+      .year-establish p {
+        font-size: 1.2rem;
+      }
+      
+      .year-description {
+        padding: 20px;
+      }
+      
     }

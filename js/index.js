@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", function() {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     
     // Aplicar estilos a los elementos con el ID "cajas-servicios"
-    let cajas = document.querySelectorAll('.container-fluid');
+    let cajas = document.querySelectorAll('.cajas-servicios');
+    // console.log(cajas);
+        
     for(let i=0; i<cajas.length; i++){
         // Ocultar con animación
-        if(i === 3 || i === 5) {
+        if(i === 1 || i === 3) {
             gsap.set(cajas[i], {
                 display: 'none',
                 opacity: 0,
@@ -281,113 +283,94 @@ function animarEscritura(elemento) {
     });
 }
 
-const mostrarSiguienteModal = (numero) => {
-    console.log(numero);
-    
-    let modales = document.querySelectorAll('.container-fluid');
-    
-    // Animación para ocultar el modal actual
-    if(numero === undefined) {
-        gsap.to(modales[2], {
-            duration: 0.5,
-            opacity: 0,
-            scale: 0.8,
-            onComplete: function() {
-                modales[2].style.display = 'none';
-                // Mostrar el siguiente modal con animación
-                modales[3].style.display = 'block';
-                gsap.fromTo(modales[3], 
-                    { opacity: 0, scale: 0.8 },
-                    { duration: 0.5, opacity: 1, scale: 1, ease: "back.out(1.7)" }
-                );
-                
-                // Reconfigurar animaciones de scroll para los nuevos elementos visibles
-                setTimeout(function() {
-                    ScrollTrigger.refresh();
-                    configurarAnimacionesScrollTexto();
-                }, 100);
+const mostrarSiguienteModal = (tipo) => {
+            console.log("Mostrando modal para tipo:", tipo);
+            
+            if (tipo === 0) {
+                // Ocultar trabajos verticales y mostrar detalles
+                gsap.to("#trabajos-verticales", {
+                    duration: 0.5,
+                    opacity: 0,
+                    y: -50,
+                    onComplete: function() {
+                        document.getElementById("trabajos-verticales").style.display = 'none';
+                        document.getElementById("detalles-verticales").style.display = 'block';
+                        
+                        // Forzar un reflow para asegurar que el navegador renderice el cambio
+                        void document.getElementById("detalles-verticales").offsetWidth;
+                        
+                        gsap.fromTo("#detalles-verticales", 
+                            { opacity: 0, y: 50 },
+                            { duration: 0.5, opacity: 1, y: 0, ease: "power2.out" }
+                        );
+                    }
+                });
+            } else if (tipo === 1) {
+                // Ocultar impermeabilización y mostrar detalles
+                gsap.to("#impermeabilizacion", {
+                    duration: 0.5,
+                    opacity: 0,
+                    y: -50,
+                    onComplete: function() {
+                        document.getElementById("impermeabilizacion").style.display = 'none';
+                        document.getElementById("detalles-impermeabilizacion").style.display = 'block';
+                        
+                        // Forzar un reflow para asegurar que el navegador renderice el cambio
+                        void document.getElementById("detalles-impermeabilizacion").offsetWidth;
+                        
+                        gsap.fromTo("#detalles-impermeabilizacion", 
+                            { opacity: 0, y: 50 },
+                            { duration: 0.5, opacity: 1, y: 0, ease: "power2.out" }
+                        );
+                    }
+                });
             }
-        });
-    }
-    
-    switch (numero) {
-        case 1:
-            gsap.to(modales[4], {
-                duration: 0.5,
-                opacity: 0,
-                scale: 0.8,
-                onComplete: function() {
-                    modales[4].style.display = 'none';
-                    // Mostrar el siguiente modal con animación
-                    modales[5].style.display = 'block';
-                    gsap.fromTo(modales[5], 
-                        { opacity: 0, scale: 0.8 },
-                        { duration: 0.5, opacity: 1, scale: 1, ease: "back.out(1.7)" }
-                    );
-                    
-                    // Reconfigurar animaciones de scroll para los nuevos elementos visibles
-                    setTimeout(function() {
-                        ScrollTrigger.refresh();
-                        configurarAnimacionesScrollTexto();
-                    }, 100);
-                }
-            });
-            break;
-        default:
-            break;
-    }
-}
+        }
 
-const regresarModal = (numero) => {
-    let modales = document.querySelectorAll('.container-fluid');
-    
-    // Animación para ocultar el modal actual
-    if(numero === undefined) {
-        gsap.to(modales[3], {
-            duration: 0.5,
-            opacity: 0,
-            scale: 0.8,
-            onComplete: function() {
-                modales[3].style.display = 'none';
-                // Mostrar el modal anterior con animación
-                modales[2].style.display = 'block';
-                gsap.fromTo(modales[2], 
-                    { opacity: 0, scale: 0.8 },
-                    { duration: 0.5, opacity: 1, scale: 1, ease: "back.out(1.7)" }
-                );
-                
-                // Reconfigurar animaciones de scroll para los nuevos elementos visibles
-                setTimeout(function() {
-                    ScrollTrigger.refresh();
-                    configurarAnimacionesScrollTexto();
-                }, 100);
+        // Función para regresar al modal anterior
+        const regresarModal = (tipo) => {
+            console.log("Regresando desde tipo:", tipo);
+            
+            if (tipo === 0) {
+                // Ocultar detalles verticales y mostrar trabajos verticales
+                gsap.to("#detalles-verticales", {
+                    duration: 0.5,
+                    opacity: 0,
+                    y: 50,
+                    onComplete: function() {
+                        document.getElementById("detalles-verticales").style.display = 'none';
+                        document.getElementById("trabajos-verticales").style.display = 'block';
+                        
+                        // Forzar un reflow para asegurar que el navegador renderice el cambio
+                        void document.getElementById("trabajos-verticales").offsetWidth;
+                        
+                        gsap.fromTo("#trabajos-verticales", 
+                            { opacity: 0, y: -50 },
+                            { duration: 0.5, opacity: 1, y: 0, ease: "power2.out" }
+                        );
+                    }
+                });
+            } else if (tipo === 1) {
+                // Ocultar detalles impermeabilización y mostrar impermeabilización
+                gsap.to("#detalles-impermeabilizacion", {
+                    duration: 0.5,
+                    opacity: 0,
+                    y: 50,
+                    onComplete: function() {
+                        document.getElementById("detalles-impermeabilizacion").style.display = 'none';
+                        document.getElementById("impermeabilizacion").style.display = 'block';
+                        
+                        // Forzar un reflow para asegurar que el navegador renderice el cambio
+                        void document.getElementById("impermeabilizacion").offsetWidth;
+                        
+                        gsap.fromTo("#impermeabilizacion", 
+                            { opacity: 0, y: -50 },
+                            { duration: 0.5, opacity: 1, y: 0, ease: "power2.out" }
+                        );
+                    }
+                });
             }
-        });
-    }
-    
-    if(numero == 1) {
-        gsap.to(modales[5], {
-            duration: 0.5,
-            opacity: 0,
-            scale: 0.8,
-            onComplete: function() {
-                modales[5].style.display = 'none';
-                // Mostrar el modal anterior con animación
-                modales[4].style.display = 'block';
-                gsap.fromTo(modales[4], 
-                    { opacity: 0, scale: 0.8 },
-                    { duration: 0.5, opacity: 1, scale: 1, ease: "back.out(1.7)" }
-                );
-                
-                // Reconfigurar animaciones de scroll para los nuevos elementos visibles
-                setTimeout(function() {
-                    ScrollTrigger.refresh();
-                    configurarAnimacionesScrollTexto();
-                }, 100);
-            }
-        });
-    }
-}
+        }
 
 // Asegurar que las animaciones se actualicen cuando la ventana cambie de tamaño
 window.addEventListener('resize', function() {
