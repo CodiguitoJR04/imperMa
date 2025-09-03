@@ -39,6 +39,59 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Configurar animaciones con scroll para todos los textos
     configurarAnimacionesScrollTexto();
+   const modal = document.getElementById("modalGaleria");
+  const modalTitle = modal.querySelector("#modalGaleriaLabel");
+  const carouselInner = modal.querySelector("#carousel-inner-content");
+  const materialInfo = modal.querySelector("#material-info-content");
+
+  // Cargar contenido justo cuando el modal se va a mostrar
+  modal.addEventListener("show.bs.modal", (ev) => {
+    // El elemento que abrió el modal (tu .galeria-item)
+    const trigger = ev.relatedTarget?.closest(".galeria-item");
+    if (!trigger) return;
+
+    // Tomar datos del ítem clicado
+    const categoria = trigger.getAttribute("data-categoria");
+    const imagenIndex = (parseInt(trigger.getAttribute("data-imagen"), 10) || 1) - 1;
+
+    // Datos desde el objeto 'galerias' (texto/SEO)
+    const catData = galerias[categoria];
+    const g = catData?.imagenes?.[imagenIndex];
+
+    // Fallbacks: si la ruta en 'galerias' estuviera mal escrita,
+    // usamos la imagen real del HTML clicado para que SIEMPRE se vea.
+    const clickedImgSrc = trigger.querySelector("img")?.getAttribute("src") || "";
+    const clickedTitle = trigger.querySelector(".galeria-overlay h4")?.textContent?.trim() || "";
+    const clickedDesc = trigger.querySelector(".galeria-overlay p")?.textContent?.trim() || "";
+
+    // Construir valores finales (prefiere datos del objeto, cae al HTML si faltan)
+    const finalTitle = g?.title || clickedTitle || "Trabajo";
+    const finalDesc = g?.description || clickedDesc || "";
+    const finalSrc = g?.src || clickedImgSrc || "";
+    const finalMat = g?.material || "";
+    const finalMatInfo = g?.materialInfo || "";
+
+    // Título del modal por categoría (si existe)
+    modalTitle.textContent = catData?.titulo || "Galería de Trabajos";
+
+    // Vaciar y crear UN solo slide activo
+    carouselInner.innerHTML = "";
+    const item = document.createElement("div");
+    item.className = "carousel-item active";
+    item.innerHTML = `
+      <img src="${finalSrc}" class="d-block w-100" alt="${finalTitle}">
+      <div class="carousel-caption">
+        <h5>${finalTitle}</h5>
+        <p>${finalDesc}</p>
+      </div>
+    `;
+    carouselInner.appendChild(item);
+
+    // Texto de material (si hay)
+    materialInfo.innerHTML = (finalMat || finalMatInfo)
+      ? `<h6>Material utilizado: ${finalMat}</h6><p>${finalMatInfo}</p>`
+      : "";
+  });
 });
 
 // Función para animar textos al cargar la página
