@@ -433,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-secondary);
   color: var(--color-white);
   transform: rotateY(180deg);
-  padding: 25px;
+  padding: 1px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -497,9 +497,9 @@ h1, h2, h3, h4, h5, h6 {
 .process-list li {
   position: relative;
   padding-left: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.1;
 }
 
 .process-list li::before {
