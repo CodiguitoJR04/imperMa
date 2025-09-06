@@ -15,6 +15,11 @@
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
   --border-radius: 10px;
+  
+  /* Espaciado consistente */
+  --section-spacing: 6rem;
+  --element-spacing: 2rem;
+  --card-spacing: 1.5rem;
 }
 
 /* Reset y estilos base */
@@ -39,16 +44,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Utilidades */
 .text-center { text-align: center; }
-.section-padding { padding: 5rem 0; }
+.section-padding { 
+  padding: var(--section-spacing) 0; 
+  position: relative;
+}
 .bg-light { background-color: var(--color-light); }
 .bg-white { background-color: var(--color-white); }
+.mb-3 { margin-bottom: var(--element-spacing); }
 
-/* Navegación */
+/* Navegación - Efecto centro a los lados */
 .nav-custom {
   background-color: var(--color-light);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
   transition: var(--transition);
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
 }
 
 .navbar-brand img {
@@ -63,8 +72,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   color: var(--color-dark);
   position: relative;
-  margin: 0 0.5rem;
+  margin: 0 0.8rem;
   transition: var(--transition);
+  padding: 0.5rem 0;
 }
 
 .nav-list .nav-link:hover, 
@@ -72,23 +82,32 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
 
+/* Efecto de subrayado desde el centro hacia los lados */
 .nav-list .nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
   transition: var(--transition);
+  transform: translateX(-50%);
 }
 
 .nav-list .nav-link:hover::after,
 .nav-list .nav-link.active::after {
   width: 100%;
+  left: 50%;
 }
 
+/* Resto del CSS se mantiene igual... */
+
 /* Carrusel Hero */
+.carousel-section {
+  margin-bottom: var(--section-spacing);
+}
+
 .carousel-item {
   height: 85vh;
   min-height: 500px;
@@ -117,28 +136,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .conten-slide-custom {
   max-width: 650px;
-  padding: 2rem;
+  padding: 2.5rem;
   color: var(--color-white);
   animation: fadeIn 1s ease;
 }
 
 .title-slide-card {
   font-size: 2.8rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   color: var(--color-white);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .conten-slide-custom p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .btn-custom {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: 50px;
   font-weight: 600;
   text-transform: uppercase;
@@ -155,14 +174,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousel-indicators {
-  bottom: 30px;
+  bottom: 40px;
 }
 
 .btn-slide {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin: 0 8px;
+  margin: 0 10px;
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   transition: var(--transition);
@@ -175,8 +194,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel-control-prev, 
 .carousel-control-next {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
   top: 50%;
@@ -185,8 +204,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition);
 }
 
-.carousel-control-prev { left: 20px; }
-.carousel-control-next { right: 20px; }
+.carousel-control-prev { left: 25px; }
+.carousel-control-next { right: 25px; }
 
 .carousel-control-prev:hover, 
 .carousel-control-next:hover {
@@ -195,28 +214,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Sección Nosotros */
+.section-nosotros {
+  padding: var(--section-spacing) 0;
+  background-color: var(--color-white);
+}
+
 .content-year-nosotros {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .year-establish {
   flex: 1;
   min-width: 250px;
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem;
   background: var(--color-accent);
   border-radius: var(--border-radius);
   color: var(--color-white);
-  margin-right: 2rem;
+  margin-right: 2.5rem;
   box-shadow: var(--shadow);
 }
 
 .year-establish h2 {
   font-size: 4rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   color: var(--color-white);
 }
 
@@ -232,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container-text h2 {
   color: var(--color-primary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   position: relative;
   padding-bottom: 15px;
 }
@@ -251,12 +275,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
   color: var(--color-dark);
   font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 /* Sección Servicios */
+.servicios {
+  padding: var(--section-spacing) 0;
+  background-color: var(--color-light);
+}
+
 .container-servicios h2 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   position: relative;
   padding-bottom: 15px;
 }
@@ -279,6 +309,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition);
   box-shadow: var(--shadow);
   height: 100%;
+  margin-bottom: 2rem;
 }
 
 .card-custom:hover {
@@ -303,13 +334,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content-title {
-  padding: 1.5rem;
+  padding: var(--card-spacing);
   text-align: center;
 }
 
 .content-title h3 a {
   text-decoration: none;
   transition: var(--transition);
+  color: var(--color-primary);
 }
 
 .content-title h3 a:hover {
@@ -317,9 +349,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Galería */
+.gallery-section {
+  padding: var(--section-spacing) 0;
+  background-color: var(--color-white);
+}
+
 .gallery-title {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   position: relative;
   padding-bottom: 15px;
 }
@@ -336,14 +373,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gallery-category {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .category-title {
   position: relative;
   padding-bottom: 15px;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-family: var(--font-primary);
+  color: var(--color-dark);
 }
 
 .category-title::after {
@@ -364,7 +402,7 @@ h1, h2, h3, h4, h5, h6 {
 .gallery-card {
   height: 380px;
   perspective: 1000px;
-  margin-bottom: 30px;
+  margin-bottom: 2.5rem;
 }
 
 .gallery-card-inner {
@@ -395,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-secondary);
   color: var(--color-white);
   transform: rotateY(180deg);
-  padding: 20px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -423,14 +461,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gallery-card-body {
-  padding: 1.5rem;
+  padding: var(--card-spacing);
   background: var(--color-white);
 }
 
 .gallery-card-title {
   color: var(--color-primary);
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 1.2rem;
 }
 
@@ -438,12 +476,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-dark);
   font-size: 0.95rem;
   margin-bottom: 0;
+  line-height: 1.6;
 }
 
 .process-title {
   color: var(--color-white);
   font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   text-align: center;
   font-weight: 600;
   font-family: var(--font-primary);
@@ -457,10 +496,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .process-list li {
   position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.8rem;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .process-list li::before {
@@ -469,7 +508,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   color: var(--color-accent);
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 /* WhatsApp Flotante */
@@ -501,7 +540,8 @@ h1, h2, h3, h4, h5, h6 {
 footer {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 50px 0 20px;
+  padding: 4rem 0 1.5rem;
+  margin-top: var(--section-spacing);
 }
 
 .container-icon img {
@@ -518,7 +558,7 @@ footer {
 .icon-red {
   color: var(--color-white);
   text-decoration: none;
-  margin-bottom: 15px;
+  margin-bottom: 1.2rem;
   transition: var(--transition);
   display: flex;
   align-items: center;
@@ -530,12 +570,12 @@ footer {
 }
 
 .icon-red i {
-  margin-right: 10px;
+  margin-right: 12px;
   font-size: 20px;
 }
 
 .container-menu ul li {
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
 }
 
 .nav-footer a {
@@ -567,10 +607,29 @@ footer {
   }
 }
 
+/* Separadores de sección */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
+  width: 80%;
+  margin: 0 auto;
+}
+
 /* Media Queries Responsive */
+@media (max-width: 1200px) {
+  :root {
+    --section-spacing: 5rem;
+  }
+}
+
 @media (max-width: 992px) {
+  :root {
+    --section-spacing: 4.5rem;
+    --element-spacing: 1.8rem;
+  }
+  
   .title-slide-card {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
   
   .content-year-nosotros {
@@ -579,45 +638,87 @@ footer {
   
   .year-establish {
     margin-right: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+  }
+  
+  .gallery-card {
+    height: 360px;
+  }
+  
+  /* Ajuste para navegación en móviles */
+  .nav-list .nav-link::after {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
+  :root {
+    --section-spacing: 4rem;
+    --card-spacing: 1.2rem;
+  }
+  
   .carousel-item {
-    height: 70vh;
+    height: 75vh;
   }
   
   .title-slide-card {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   
   .conten-slide-custom p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
   .year-establish h2 {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
   
   .container-img {
-    height: 220px;
+    height: 240px;
+  }
+  
+  .gallery-card {
+    height: 340px;
+    margin-bottom: 2rem;
+  }
+  
+  .gallery-img-container {
+    height: 200px;
   }
 }
 
 @media (max-width: 576px) {
+  :root {
+    --section-spacing: 3.5rem;
+    --element-spacing: 1.5rem;
+  }
+  
   .carousel-item {
-    height: 60vh;
+    height: 65vh;
     min-height: 400px;
   }
   
+  .conten-slide-custom {
+    padding: 1.5rem;
+  }
+  
   .title-slide-card {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
   }
   
   .btn-custom {
-    padding: 0.6rem 1.5rem;
+    padding: 0.8rem 2rem;
     font-size: 0.9rem;
+  }
+  
+  .year-establish {
+    padding: 2rem 1.5rem;
+  }
+  
+  .year-establish h2 {
+    font-size: 2.8rem;
   }
   
   .whatsapp-float {
@@ -626,5 +727,17 @@ footer {
     bottom: 20px;
     right: 20px;
     font-size: 24px;
+  }
+  
+  .gallery-card {
+    height: 320px;
+  }
+  
+  .gallery-card-back {
+    padding: 20px;
+  }
+  
+  footer {
+    padding: 3rem 0 1.5rem;
   }
 }
