@@ -14,6 +14,26 @@
     <link rel="icon" type="image/x-icon" href="/assets/img/img-usses/logos-removebg-preview.png">
     <link rel="stylesheet" href="/css/styles-nosotros.css">
     <title>Nosotros - ImperMax</title>
+    <style>
+        /* Estilos para la galería y modal */
+        .galeria-item {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .galeria-item:hover {
+            transform: scale(1.03);
+        }
+        .modal-galeria .carousel-item img {
+            max-height: 500px;
+            object-fit: contain;
+        }
+        .material-info {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -73,77 +93,80 @@
         </section>
 
         <!-- Galería de Trabajos - Mejorada -->
-        <section class="galeria">
-            <div class="container">
-                <h2>Nuestros Trabajos</h2>
-                
-                <!-- Impermeabilización -->
-                <h3 class="categoria-titulo">Impermeabilización</h3>
-                <div class="galeria-grid">
-                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="impermeabilizacion" data-imagen="1">
-                        <img src="/assets/img/img-usses/impermeabilizaicon-prefabricado-techo.jpg" alt="Impermeabilización de techo con membrana líquida polimérica" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <h4>Impermeabilización de Techo</h4>
-                            <p>Membrana líquida de poliuretano para máxima durabilidad</p>
-                        </div>
-                    </div>
-                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="impermeabilizacion" data-imagen="2">
-                        <img src="/assets/img/img-usses/impermeabilizaicion-membrana.jpg" alt="Aplicación de membrana asfáltica para impermeabilización" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <h4>Aplicación de Membrana</h4>
-                            <p>Membrana asfáltica autoprotegida con garantía extendida</p>
-                        </div>
-                    </div>
-                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="impermeabilizacion" data-imagen="3">
-                        <img src="/assets/img/img-usses/impermeabilizacion-terraza.jpg" alt="Sellado de terraza con productos de alta resistencia" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <h4>Sellado de Terraza</h4>
-                            <p>Sellado elastomérico para terrazas expuestas a condiciones climáticas extremas</p>
-                        </div>
-                    </div>
-                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="impermeabilizacion" data-imagen="4">
-                        <img src="/assets/img/img-usses/impermeabilizacion-nave-industrial.jpg" alt="Impermeabilización de nave industrial con membranas especializadas" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <h4>Impermeabilización de Nave Industrial</h4>
-                            <p>Membranas especializadas para contacto con agua potable</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Trabajos Verticales -->
-                <h3 class="categoria-titulo">Trabajos Verticales</h3>
-                <div class="galeria-grid">
-                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="verticales" data-imagen="1">
-                        <img src="/assets/img/img-usses/limpieza-de-fachadas.jpg" alt="Limpieza de fachada con técnicas de trabajos verticales" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <h4>Limpieza de Fachada</h4>
-                            <p>Limpieza con agua a presión y productos ecológicos especializados</p>
-                        </div>
-                    </div>
-                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="verticales" data-imagen="2">
-                        <img src="/assets/img/img-usses/reparacion-vertical.jpg" alt="Reparación en altura con técnicas de acceso por cuerda" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <h4>Reparación en Altura</h4>
-                            <p>Reparación de grietas y fisuras con morteros de reparación estructural</p>
-                        </div>
-                    </div>
-                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="verticales" data-imagen="3">
-                        <img src="/assets/img/img-usses/pintura-vertical.jpg" alt="Pintura en altura con productos de alta durabilidad" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <h4>Pintura en Altura</h4>
-                            <p>Pinturas elastoméricas y de alta resistencia para fachadas</p>
-                        </div>
-                    </div>
-                    <div class="galeria-item" data-bs-toggle="modal" data-bs-target="#modalGaleria" data-categoria="verticales" data-imagen="4">
-                        <img src="/assets/img/img-usses/mantenimeinto-vertical.jpg" alt="Mantenimiento vertical con equipos de seguridad especializados" class="galeria-img">
-                        <div class="galeria-overlay">
-                            <h4>Mantenimiento Vertical</h4>
-                            <p>Mantenimiento preventivo y correctivo de fachadas y estructuras altas</p>
-                        </div>
-                    </div>
+        <!-- Galería de Trabajos -->
+<section class="galeria">
+    <div class="container">
+        <h2>Nuestros Proyectos</h2>
+        <p>Explora algunos de nuestros trabajos destacados en impermeabilización y trabajos verticales. Cada proyecto refleja nuestro compromiso con la calidad y la satisfacción del cliente.</p>
+
+        <!-- Impermeabilización -->
+        <h3 class="categoria-titulo">Impermeabilización</h3>
+        <div class="galeria-grid">
+            <div class="galeria-item" data-categoria="impermeabilizacion" data-subcategoria="prefabricado" data-imagen="1">
+                <img src="/assets/img/img-usses/prefabricado/imagen-1.jpg" alt="Impermeabilización de techo" class="galeria-img">
+                <div class="galeria-overlay">
+                    <h4>Impermeabilización de Techo</h4>
+                    <p>Membrana líquida de poliuretano</p>
                 </div>
             </div>
-        </section>
+            <div class="galeria-item" data-categoria="impermeabilizacion" data-subcategoria="acrilico" data-imagen="1">
+                <img src="/assets/img/img-usses/acrilico/imagen-1.jpg" alt="Aplicación de membrana" class="galeria-img">
+                <div class="galeria-overlay">
+                    <h4>Aplicación de Membrana</h4>
+                    <p>Membrana asfáltica autoprotegida</p>
+                </div>
+            </div>
+            <div class="galeria-item" data-categoria="impermeabilizacion" data-subcategoria="cementoso" data-imagen="1">
+                <img src="/assets/img/img-usses/cementoso/imagen-1.jpg" alt="Sellado de terraza" class="galeria-img">
+                <div class="galeria-overlay">
+                    <h4>Sellado de Terraza</h4>
+                    <p>Sellador elastomérico</p>
+                </div>
+            </div>
+            <div class="galeria-item" data-categoria="impermeabilizacion" data-subcategoria="pulieretano" data-imagen="1">
+                <img src="/assets/img/img-usses/pulieretano/imagen-1.jpg" alt="Impermeabilización de nave industrial" class="galeria-img">
+                <div class="galeria-overlay">
+                    <h4>Impermeabilización de Nave Industrial</h4>
+                    <p>Membrana para agua potable</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trabajos Verticales -->
+        <h3 class="categoria-titulo">Trabajos Verticales</h3>
+        <div class="galeria-grid">
+            <div class="galeria-item" data-categoria="verticales" data-subcategoria="limpieza_vidrios" data-imagen="1">
+                <img src="/assets/img/img-usses/limpieza_vidrios/imagen-1.jpg" alt="Limpieza de Fachada" class="galeria-img">
+                <div class="galeria-overlay">
+                    <h4>Limpieza de Fachada</h4>
+                    <p>Sistema de limpieza ecológico</p>
+                </div>
+            </div>
+            <div class="galeria-item" data-categoria="verticales" data-subcategoria="mantenimiento" data-imagen="1">
+                <img src="/assets/img/img-usses/mantenimiento/imagen-1.jpg" alt="Reparación en Altura" class="galeria-img">
+                <div class="galeria-overlay">
+                    <h4>Reparación en Altura</h4>
+                    <p>Morteros de reparación estructural</p>
+                </div>
+            </div>
+            <div class="galeria-item" data-categoria="verticales" data-subcategoria="pintura" data-imagen="1">
+                <img src="/assets/img/img-usses/pintura/imagen-1.jpg" alt="Pintura en Altura" class="galeria-img">
+                <div class="galeria-overlay">
+                    <h4>Pintura en Altura</h4>
+                    <p>Pinturas elastoméricas</p>
+                </div>
+            </div>
+            <div class="galeria-item" data-categoria="verticales" data-subcategoria="sellado" data-imagen="1">
+                <img src="/assets/img/img-usses/sellado/imagen-1.jpg" alt="Mantenimiento Vertical" class="galeria-img">
+                <div class="galeria-overlay">
+                    <h4>Mantenimiento Vertical</h4>
+                    <p>Sistemas de protección y conservación</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     </main>
     
     <!-- Modal para Galería - Mejorado -->
@@ -208,96 +231,162 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script>
-        // Datos de las galerías con información SEO mejorada
-const galerias = {
-  impermeabilizacion: {
-    titulo: "Impermeabilización",
-    imagenes: [
-      {
-        src: "/assets/img/img-usses/impermeabilizaicon-prefabricado-techo.jpg",
-        title: "Impermeabilización de Techo",
-        description: "Aplicación de membrana líquida en techo plano con garantía de 10 años.",
-        material: "Membrana líquida de poliuretano",
-        materialInfo:
-          "La membrana líquida de poliuretano que utilizamos ofrece una protección superior contra filtraciones de agua. Este material de alta tecnología forma una barrera continua y elástica que se adapta a las dilataciones térmicas, evitando grietas y garantizando una impermeabilización duradera incluso en condiciones climáticas extremas."
-      },
-      {
-        src: "/assets/img/img-usses/impermeabilizaicion-membrana.jpg",
-        title: "Aplicación de Membrana",
-        description: "Proceso de aplicación de membrana asfáltica en terraza exterior.",
-        material: "Membrana asfáltica autoprotegida",
-        materialInfo:
-          "Nuestras membranas asfálticas autoprotegidas incluyen una capa superficial que las protege de los rayos UV y el desgaste mecánico. Este sistema de impermeabilización es ideal para terrazas transitables, proporcionando resistencia al agua, durabilidad y protección contra factores ambientales con una vida útil extendida."
-      },
-      {
-        src: "/assets/img/img-usses/impermeabilizacion-terraza.jpg",
-        title: "Sellado de Terraza",
-        description: "Trabajo de sellado completo en terraza con materiales de alta calidad.",
-        material: "Sellador elastomérico",
-        materialInfo:
-          "Nuestro sellador elastomérico de alto rendimiento está formulado específicamente para terrazas expuestas a condiciones climáticas extremas. Este material mantiene su flexibilidad en temperaturas variables, resiste la intemperie y los rayos UV, y proporciona una barrera impermeable que evita filtraciones y daños por humedad."
-      },
-      {
-        src: "/assets/img/img-usses/impermeabilizacion-nave-industrial.jpg",
-        title: "Impermeabilización de Nave Industrial",
-        description: "Proceso de impermeabilización de cisterna con productos especializados.",
-        material: "Membrana para agua potable",
-        materialInfo:
-          "Para cisternas y depósitos de agua potable, utilizamos membranas especializadas certificadas para contacto con agua de consumo humano. Estos materiales no alteran las propiedades del agua, son resistentes a microorganismos y proporcionan una impermeabilización completa que previene filtraciones y contaminación externa."
-      }
-    ]
-  },
-  verticales: {
-    titulo: "Trabajos Verticales",
-    imagenes: [
-      {
-        src: "/assets/img/img-usses/limpieza-de-fachadas.jpg",
-        title: "Limpieza de Fachada",
-        description: "Limpieza especializada de fachada en edificio de 10 pisos.",
-        material: "Sistema de limpieza ecológico",
-        materialInfo:
-          "Nuestro sistema de limpieza de fachadas utiliza productos ecológicos y técnicas de agua a presión controlada que eliminan suciedad, contaminantes y organismos biológicos sin dañar los materiales de construcción. Este método es seguro para el medio ambiente y restaura la apariencia original de las fachadas sin deteriorarlas."
-      },
-      {
-        src: "/assets/img/img-usses/reparacion-vertical.jpg",
-        title: "Reparación en Altura",
-        description: "Reparación de grietas y daños en muro exterior con técnicas de rappel.",
-        material: "Morteros de reparación estructural",
-        materialInfo:
-          "Para reparaciones en altura, utilizamos morteros de reparación estructural de altas prestaciones. Estos materiales tienen excelente adherencia, resistencia mecánica y durabilidad, permitiendo restaurar la integridad estructural de fachadas y elementos constructivos dañados, incluso en condiciones de difícil acceso."
-      },
-      {
-        src: "/assets/img/img-usses/pintura-vertical.jpg",
-        title: "Pintura en Altura",
-        description: "Trabajos de pintura especializada en fachada de edificio histórico.",
-        material: "Pinturas elastoméricas",
-        materialInfo:
-          "Nuestras pinturas elastoméricas para fachadas ofrecen una protección superior gracias a su capacidad de expandirse y contraerse con los cambios térmicos, evitando grietas y descamaciones. Forman una película continua que resiste la humedad, los rayos UV y la contaminación ambiental, manteniendo su aspecto y propiedades durante años."
-      },
-      {
-        src: "/assets/img/img-usses/mantenimeinto-vertical.jpg", // usa exactamente el nombre real del archivo
-        title: "Mantenimiento Vertical",
-        description: "Mantenimiento preventivo en fachada con equipo de seguridad especializado.",
-        material: "Sistemas de protección y conservación",
-        materialInfo:
-          "Nuestros sistemas de mantenimiento vertical incluyen tratamientos protectores que prolongan la vida útil de las fachadas. Aplicamos hidrofugantes que repelen el agua, conservantes que previenen el deterioro biológico y productos que mejoran la resistencia a la intemperie, todo ello con técnicas de acceso por cuerda que garantizan seguridad y precisión."
-      }
-    ]
-  }
-};
+    // Función dinámica para cargar imágenes
+    function cargarImagenesDinamicamente() {
+        const galeriaItems = document.querySelectorAll('.galeria-item');
+        
+        galeriaItems.forEach(item => {
+            const categoria = item.getAttribute('data-categoria');
+            const subcategoria = item.getAttribute('data-subcategoria');
+            const imagenIndex = item.getAttribute('data-imagen');
+            
+            // Construir ruta de la imagen
+            const rutaBase = `/assets/img/img-usses/${subcategoria}/`;
+            const rutaImagen = `${rutaBase}img-${imagenIndex}.jpg`;
+            
+            const imgElement = item.querySelector('.galeria-img');
+            imgElement.src = rutaImagen;
+            
+            // Manejar errores de carga
+            imgElement.onerror = function() {
+                console.warn(`Imagen no encontrada: ${rutaImagen}`);
+                imgElement.src = 'https://via.placeholder.com/600x400/6c757d/ffffff?text=Imagen+no+disponible';
+            };
+        });
+    }
 
-// Configurar el modal cuando se hace clic en una imagen
+    // Función para inicializar el modal de forma dinámica
+    function inicializarModalDinamico() {
+        const galeriaItems = document.querySelectorAll('.galeria-item');
+        
+        galeriaItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const categoria = this.getAttribute('data-categoria');
+                const subcategoria = this.getAttribute('data-subcategoria');
+                const imagenIndex = parseInt(this.getAttribute('data-imagen'));
+                
+                // Obtener información del overlay
+                const overlay = this.querySelector('.galeria-overlay');
+                const titulo = overlay.querySelector('h4').textContent;
+                const descripcion = overlay.querySelector('p').textContent;
+                
+                // Cargar todas las imágenes disponibles para esta subcategoría
+                cargarModalConTodasLasImagenes(categoria, subcategoria, imagenIndex, titulo, descripcion);
+            });
+        });
+    }
 
+    // Función que detecta y carga todas las imágenes disponibles
+    function cargarModalConTodasLasImagenes(categoria, subcategoria, imagenIndexInicial, titulo, descripcion) {
+        const rutaBase = `/assets/img/img-usses/${subcategoria}/`;
+        
+        // Primero, intentamos determinar cuántas imágenes hay
+        determinarCantidadImagenes(rutaBase, function(cantidad) {
+            // Construir el carrusel con todas las imágenes encontradas
+            const carouselInner = document.getElementById('carousel-inner-content');
+            carouselInner.innerHTML = '';
+            
+            for (let i = 1; i <= cantidad; i++) {
+                const item = document.createElement('div');
+                item.className = `carousel-item ${i === imagenIndexInicial ? 'active' : ''}`;
+                item.setAttribute('data-index', i - 1);
+                
+                const rutaImagen = `${rutaBase}img-${i}.jpg`;
+                
+                item.innerHTML = `
+                    <img src="${rutaImagen}" class="d-block w-100" alt="${titulo}" 
+                         onerror="this.style.display='none'">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>${titulo} ${i}</h5>
+                        <p>${descripcion}</p>
+                    </div>
+                `;
+                carouselInner.appendChild(item);
+            }
+            
+            // Actualizar información del material
+            mostrarInfoMaterial(categoria, subcategoria, titulo, descripcion);
+            
+            // Actualizar título del modal
+            document.getElementById('modalGaleriaLabel').textContent = titulo;
+            
+            // Mostrar el modal
+            const modal = new bootstrap.Modal(document.getElementById('modalGaleria'));
+            modal.show();
+        });
+    }
 
+    // Función para determinar cuántas imágenes hay en una carpeta
+    function determinarCantidadImagenes(rutaBase, callback) {
+        let maxIntentos = 20; // Límite máximo de imágenes a verificar
+        let cantidadEncontradas = 0;
+        let verificadas = 0;
+        
+        // Función para verificar una imagen específica
+        function verificarImagen(index) {
+            const img = new Image();
+            img.onload = function() {
+                cantidadEncontradas = index;
+                if (index < maxIntentos) {
+                    verificarImagen(index + 1);
+                } else {
+                    callback(cantidadEncontradas);
+                }
+            };
+            img.onerror = function() {
+                // Esta imagen no existe, terminamos de verificar
+                callback(cantidadEncontradas);
+            };
+            img.src = `${rutaBase}img-${index}.jpg`;
+        }
+        
+        // Iniciar la verificación desde la primera imagen
+        verificarImagen(1);
+    }
+
+    // Función para mostrar información del material
+    function mostrarInfoMaterial(categoria, subcategoria, titulo, descripcion) {
+        const materialInfo = document.getElementById('material-info-content');
+        
+        // Mapeo de materiales por subcategoría (puedes expandir esto)
+        const materialesPorSubcategoria = {
+            prefabricado: "Membrana líquida de poliuretano",
+            acrillico: "Membrana asfáltica autoprotegida",
+            cementoso: "Sellador elastomérico",
+            pulieretano: "Membrana para agua potable",
+            limpieza_vidrios: "Sistema de limpieza ecológico",
+            mantenimiento: "Morteros de reparación estructural",
+            pintura: "Pinturas elastoméricas",
+            sellado: "Sistemas de protección y conservación"
+        };
+        
+        const material = materialesPorSubcategoria[subcategoria] || "Materiales de alta calidad";
+        
+        materialInfo.innerHTML = `
+            <h4>${titulo}</h4>
+            <p><strong>Material utilizado:</strong> ${material}</p>
+            <p>${descripcion}</p>
+        `;
+    }
+
+    // Inicializar cuando el documento esté listo
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cargar imágenes en la galería principal
+        cargarImagenesDinamicamente();
+        
+        // Inicializar funcionalidad del modal
+        inicializarModalDinamico();
+        
+        // Configurar eventos para el carrusel del modal
+        document.getElementById('carouselGaleria').addEventListener('slid.bs.carousel', function() {
+            const activeItem = document.querySelector('#carouselGaleria .carousel-item.active');
+            if (activeItem) {
+                const indice = parseInt(activeItem.getAttribute('data-index'));
+                // Aquí podrías actualizar la información si es necesario
+            }
+        });
+    });
     </script>
-    <script src="/js/index.js"></script>
 </body>
 </html>
